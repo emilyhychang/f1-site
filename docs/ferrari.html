@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Ferrari Garage — Scuderia 16</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/enhancements.css" data-enhancements />
     <script
       type="module"
       src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
@@ -22,37 +23,48 @@
           simulated race-control HUD built around the 16.
         </p>
       </div>
+
       <section class="garage garage-interactive">
         <div class="garage-header">
-          <strong>SF-25</strong><small>SCUDERIA FERRARI · GARAGE 16</small>
+          <strong>SF-25</strong>
+          <small>SCUDERIA FERRARI · GARAGE 16</small>
         </div>
+
         <div class="garage-ring"></div>
+
         <div class="garage-stage-label">
-          CAMERA / <strong id="garage-view-label">SIDE</strong>
+          CAMERA /
+          <strong id="garage-view-label">SIDE</strong>
         </div>
+
         <div class="garage-hud">
           <div class="hud-card">
-            <small>Charles / Current points</small><b id="hud-points">117</b>
+            <small>Charles / Current points</small>
+            <b id="hud-points">117</b>
             <div class="hud-bar"><i></i></div>
           </div>
           <div class="hud-card">
-            <small>Form index</small><b id="hud-form">89</b>
+            <small>Form index</small>
+            <b id="hud-form">89</b>
             <div class="hud-bar"><i></i></div>
           </div>
           <div class="hud-card">
-            <small>Speed</small><b id="hud-speed">312 KM/H</b>
+            <small>Speed</small>
+            <b id="hud-speed">312 KM/H</b>
           </div>
           <div class="hud-card">
-            <small>Throttle / Brake</small
-            ><b
-              ><span id="hud-throttle">94%</span> ·
-              <span id="hud-brake">OPEN</span></b
-            >
+            <small>Throttle / Brake</small>
+            <b>
+              <span id="hud-throttle">94%</span> ·
+              <span id="hud-brake">OPEN</span>
+            </b>
           </div>
           <div class="hud-card">
-            <small>ERS deployment</small><b id="hud-ers">78%</b>
+            <small>ERS deployment</small>
+            <b id="hud-ers">78%</b>
           </div>
         </div>
+
         <model-viewer
           id="ferrari-model"
           src="https://raw.githubusercontent.com/adityakotha03/F1nsight/main/public/ArFiles/glbs/2025/ferrari.glb"
@@ -66,32 +78,45 @@
           field-of-view="30deg"
           alt="Interactive Ferrari Formula 1 car 3D model"
         ></model-viewer>
+
         <div class="garage-viewbar">
-          <button data-garage-view="FRONT">FRONT</button
-          ><button data-garage-view="SIDE" class="active">SIDE</button
-          ><button data-garage-view="REAR">REAR</button
-          ><button data-garage-view="COCKPIT">COCKPIT</button>
+          <button data-garage-view="FRONT">FRONT</button>
+          <button data-garage-view="SIDE" class="active">SIDE</button>
+          <button data-garage-view="REAR">REAR</button>
+          <button data-garage-view="COCKPIT">COCKPIT</button>
         </div>
+
         <div class="garage-controls">
           drag to rotate · scroll to zoom · click car to pause · double click to
           reset
         </div>
       </section>
+
       <div class="model-note">
         Interactive Ferrari model adapted from the public F1nsight project asset
         library; the garage HUD and camera system are custom-built for this
         site. Telemetry values are visual simulation, not live timing.
       </div>
+
       <section class="garage-readout-grid">
         <div class="garage-readout garage-focus">
-          <b>117</b><span>Charles GP points</span>
+          <b>117</b>
+          <span>Charles GP points</span>
         </div>
         <div class="garage-readout">
-          <b>4</b><span>Championship position</span>
+          <b>4</b>
+          <span>Championship position</span>
         </div>
-        <div class="garage-readout"><b>1</b><span>2026 win</span></div>
-        <div class="garage-readout"><b>4</b><span>2026 podiums</span></div>
+        <div class="garage-readout">
+          <b>1</b>
+          <span>2026 win</span>
+        </div>
+        <div class="garage-readout">
+          <b>4</b>
+          <span>2026 podiums</span>
+        </div>
       </section>
+
       <section class="dashboard-grid">
         <article class="panel span-4">
           <div class="panel-title">
@@ -100,21 +125,36 @@
           </div>
           <div class="driver-mini">
             <div class="driver-mini-copy">
-              <strong>THE 16</strong><small>2026 season</small>
+              <strong>THE 16</strong>
+              <small>2026 season</small>
               <div class="big-number">117</div>
               <small>points</small>
             </div>
             <div class="number">16</div>
           </div>
           <div class="stat-row">
-            <div class="stat"><b>1</b><small>Win</small></div>
-            <div class="stat"><b>4</b><small>Podiums</small></div>
-            <div class="stat"><b>4</b><small>Position</small></div>
+            <div class="stat">
+              <b>1</b>
+              <small>Win</small>
+            </div>
+            <div class="stat">
+              <b>4</b>
+              <small>Podiums</small>
+            </div>
+            <div class="stat">
+              <b>4</b>
+              <small>Position</small>
+            </div>
           </div>
-          <a class="btn btn-ghost" style="margin-top: 18px" href="charles.html"
-            >Open Driver File →</a
+          <a
+            class="btn btn-ghost"
+            style="margin-top: 18px"
+            href="charles.html"
           >
+            Open Driver File →
+          </a>
         </article>
+
         <article class="panel span-4">
           <div class="panel-title">
             <h3>#44 Lewis Hamilton</h3>
@@ -122,61 +162,50 @@
           </div>
           <div class="driver-mini">
             <div class="driver-mini-copy">
-              <strong>LEWIS HAMILTON</strong><small>2026 season</small>
+              <strong>LEWIS HAMILTON</strong>
+              <small>2026 season</small>
               <div class="big-number">151</div>
               <small>points</small>
             </div>
             <div class="number">44</div>
           </div>
           <div class="stat-row">
-            <div class="stat"><b>1</b><small>Win</small></div>
-            <div class="stat"><b>5</b><small>Podiums</small></div>
-            <div class="stat"><b>2</b><small>Position</small></div>
+            <div class="stat">
+              <b>1</b>
+              <small>Win</small>
+            </div>
+            <div class="stat">
+              <b>5</b>
+              <small>Podiums</small>
+            </div>
+            <div class="stat">
+              <b>2</b>
+              <small>Position</small>
+            </div>
           </div>
         </article>
+
         <article class="panel span-4">
           <div class="panel-title">
             <h3>Garage Readout</h3>
             <span>SIMULATED HUD</span>
           </div>
           <div class="stat">
-            <b>305</b><small>Combined driver points</small>
+            <b>305</b>
+            <small>Combined driver points</small>
           </div>
-          <div class="stat"><b>2</b><small>Ferrari wins</small></div>
-          <div class="stat"><b>9</b><small>Combined podiums</small></div>
-        </article>
-        <article class="panel span-12">
-          <div class="panel-title">
-            <h3>Race Telemetry Concept</h3>
-            <span>Charles / #16</span>
+          <div class="stat">
+            <b>2</b>
+            <small>Ferrari wins</small>
           </div>
-          <div class="garage-telemetry race-track">
-            <svg viewBox="0 0 1000 180">
-              <path
-                d="M40 120 L130 35 L250 130 L360 45 L490 135 L610 40 L740 120 L860 55 L960 120"
-                fill="none"
-                stroke="#e10600"
-                stroke-width="4"
-              />
-              <path
-                d="M40 120 L130 35 L250 130 L360 45 L490 135 L610 40 L740 120 L860 55 L960 120"
-                fill="none"
-                stroke="#fff"
-                stroke-opacity=".08"
-                stroke-width="14"
-              />
-              <circle r="8" fill="#fff">
-                <animateMotion
-                  dur="5s"
-                  repeatCount="indefinite"
-                  path="M40 120 L130 35 L250 130 L360 45 L490 135 L610 40 L740 120 L860 55 L960 120"
-                />
-              </circle>
-            </svg>
+          <div class="stat">
+            <b>9</b>
+            <small>Combined podiums</small>
           </div>
         </article>
       </section>
     </main>
+
     <script src="js/app.js"></script>
     <script src="js/garage.js"></script>
   </body>
