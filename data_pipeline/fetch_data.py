@@ -2,7 +2,7 @@ import fastf1
 import json
 import os
 import pandas as pd
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 os.makedirs('data_pipeline/cache', exist_ok=True)
 fastf1.Cache.enable_cache('data_pipeline/cache')  # avoids re-downloading
@@ -12,6 +12,18 @@ OUT_DIR = 'docs/data'
 os.makedirs(OUT_DIR, exist_ok=True)
 
 schedule = fastf1.get_event_schedule(YEAR, include_testing=False)
+schedule['EventDate'] = pd.to_datetime(schedule['EventDate'], utc=True)
+now = datetime.now(timezone.utc)
+
+
+def race_data_should_be_available(event):
+    """Wait six hours after the scheduled race time before requesting results."""
+    race_time = event.get('Session5DateUtc')
+    if pd.isna(race_time):
+        race_time = event['EventDate'] + timedelta(hours=18)
+    else:
+        race_time = pd.to_datetime(race_time, utc=True)
+    return race_time + timedelta(hours=6) <= now
 
 schedule_out = schedule[['RoundNumber', 'EventName', 'Location', 'Country', 'EventDate']].copy()
 schedule_out['EventDate'] = schedule_out['EventDate'].astype(str)
@@ -21,7 +33,7 @@ standings = {}
 
 for _, event in schedule.iterrows():
     rnd = int(event['RoundNumber'])
-    if rnd == 0:
+    if rnd == 0 or not race_data_should_be_available(event):
         continue
     try:
         session = fastf1.get_session(YEAR, rnd, 'R')
@@ -41,15 +53,14 @@ for _, event in schedule.iterrows():
         standings[drv]['points'] += float(row['Points'] or 0)
 
 standings_list = sorted(standings.values(), key=lambda x: -x['points'])
-with open(f'{OUT_DIR}/standings_{YEAR}.json', 'w') as f:
-    json.dump(standings_list, f, indent=2)
-
-from datetime import datetime, timezone
+if standings_list:
+    with open(f'{OUT_DIR}/standings_{YEAR}.json', 'w') as f:
+        json.dump(standings_list, f, indent=2)
+else:
+    print('No completed-race standings returned; keeping the existing file.')
 
 # --- Find the next race and pull its track shape ---
 schedule_dates = schedule.copy()
-schedule_dates['EventDate'] = pd.to_datetime(schedule_dates['EventDate'], utc=True)
-now = datetime.now(timezone.utc)
 
 print("DEBUG — current time:", now)
 print("DEBUG — schedule dates:\n", schedule_dates[['RoundNumber', 'EventName', 'EventDate']].to_string())
@@ -86,7 +97,7 @@ os.makedirs(ANALYSIS_DIR, exist_ok=True)
 
 for _, event in schedule.iterrows():
     rnd = int(event['RoundNumber'])
-    if rnd == 0:
+    if rnd == 0 or not race_data_should_be_available(event):
         continue
 
     try:
@@ -152,22 +163,14 @@ driver_race_history = {}
 
 for _, event in schedule.iterrows():
     rnd = int(event['RoundNumber'])
-    if rnd == 0:
+    if rnd == 0 or not race_data_should_be_available(event):
         continue
+
     try:
-        session = fastf1.get_session(YEAR, rnd, 'R')
-        session.load(laps=False, telemetry=False, weather=True)
-        if session.results.empty:
-            continue
+        with open(f'{OUT_DIR}/results_{YEAR}_r{rnd}.json') as f:
+            results_rows = json.load(f)
 
-        is_wet = False
-        try:
-            if not session.weather_data.empty:
-                is_wet = bool(session.weather_data['Rainfall'].any())
-        except Exception:
-            pass
-
-        for _, row in session.results.iterrows():
+        for row in results_rows:
             drv = row['Abbreviation']
             pos = row['Position']
             pts = row['Points']
@@ -175,7 +178,7 @@ for _, event in schedule.iterrows():
                 'round': rnd,
                 'position': float(pos) if pd.notna(pos) else None,
                 'points': float(pts) if pd.notna(pts) else 0,
-                'wet': is_wet,
+                'wet': False,
                 'team': row['TeamName']
             })
     except Exception as e:
@@ -204,8 +207,11 @@ for drv, races in driver_race_history.items():
         'racesCount': len(races_sorted)
     }
 
-with open(f'{MODEL_DIR}/driver_summary_{YEAR}.json', 'w') as f:
-    json.dump(driver_summary, f, indent=2)
+if driver_summary:
+    with open(f'{MODEL_DIR}/driver_summary_{YEAR}.json', 'w') as f:
+        json.dump(driver_summary, f, indent=2)
+else:
+    print('No model inputs returned; keeping the existing driver summary.')
 
 team_race_points = {}
 for drv, summary in driver_summary.items():
@@ -215,7 +221,10 @@ for drv, summary in driver_summary.items():
     team_race_points.setdefault(team, []).append(summary['avgRecentPoints'])
 
 team_summary = {team: sum(pts) / len(pts) for team, pts in team_race_points.items()}
-with open(f'{MODEL_DIR}/team_summary_{YEAR}.json', 'w') as f:
-    json.dump(team_summary, f, indent=2)
+if team_summary:
+    with open(f'{MODEL_DIR}/team_summary_{YEAR}.json', 'w') as f:
+        json.dump(team_summary, f, indent=2)
+else:
+    print('No model inputs returned; keeping the existing team summary.')
 
 print("Fantasy model data pipeline complete.")

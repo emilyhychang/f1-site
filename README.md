@@ -8,5 +8,9 @@ six hours on Saturdays, Sundays, and Mondays. It commits only when the
 generated files actually change, which automatically triggers the GitHub Pages
 deployment.
 
+Before committing, the workflow validates the generated standings, fantasy
+inputs, and next-race data. If an upstream API is unavailable or returns an
+incomplete dataset, the run stops without replacing the site's existing data.
+
 The workflow can also be run at any time from the repository's **Actions** tab
 with **Run workflow**.
