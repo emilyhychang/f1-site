@@ -1,1 +1,73 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Analysis — Scuderia 16</title><link rel="stylesheet" href="css/style.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script></head><body><main class="page"><div class="section-head"><div><div class="eyebrow">Telemetry / Strategy / Pace</div><h1 class="display">ANALYSIS</h1></div><select class="select" id="round-picker"></select></div><div class="dashboard-grid"><div class="panel span-6 chart-panel"><div class="panel-title"><h3>Fastest Laps</h3><span>Classification</span></div><div class="table-wrap"><table class="data-table" id="fastest-table"><thead><tr><th>#</th><th>Driver</th><th>Time</th><th>Lap</th><th>Tire</th></tr></thead><tbody></tbody></table></div></div><div class="panel span-6 chart-panel"><div class="panel-title"><h3>Lap Times</h3><span>Race pace</span></div><canvas id="laptime-chart"></canvas></div><div class="panel span-12"><div class="panel-title"><h3>Tire Strategy</h3><span>Stints</span></div><div id="tire-chart"></div></div><div class="panel span-6 chart-panel"><div class="panel-title"><h3>Speed</h3><span>Ferrari telemetry</span></div><canvas id="speed-chart"></canvas></div><div class="panel span-6 chart-panel"><div class="panel-title"><h3>Throttle / Brake</h3><span>Ferrari telemetry</span></div><canvas id="throttle-brake-chart"></canvas></div></div></main><script src="js/app.js"></script><script src="js/analysis.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Analysis — Scuderia 16</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+  </head>
+  <body>
+    <main class="page">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">Telemetry / Strategy / Pace</div>
+          <h1 class="display">ANALYSIS</h1>
+        </div>
+        <select class="select" id="round-picker"></select>
+      </div>
+      <div class="dashboard-grid">
+        <div class="panel span-6 chart-panel">
+          <div class="panel-title">
+            <h3>Fastest Laps</h3>
+            <span>Classification</span>
+          </div>
+          <div class="table-wrap">
+            <table class="data-table" id="fastest-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Driver</th>
+                  <th>Time</th>
+                  <th>Lap</th>
+                  <th>Tire</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="panel span-6 chart-panel">
+          <div class="panel-title">
+            <h3>Lap Times</h3>
+            <span>Race pace</span>
+          </div>
+          <canvas id="laptime-chart"></canvas>
+        </div>
+        <div class="panel span-12">
+          <div class="panel-title">
+            <h3>Tire Strategy</h3>
+            <span>Stints</span>
+          </div>
+          <div id="tire-chart"></div>
+        </div>
+        <div class="panel span-6 chart-panel">
+          <div class="panel-title">
+            <h3>Speed</h3>
+            <span>Ferrari telemetry</span>
+          </div>
+          <canvas id="speed-chart"></canvas>
+        </div>
+        <div class="panel span-6 chart-panel">
+          <div class="panel-title">
+            <h3>Throttle / Brake</h3>
+            <span>Ferrari telemetry</span>
+          </div>
+          <canvas id="throttle-brake-chart"></canvas>
+        </div>
+      </div>
+    </main>
+    <script src="js/app.js"></script>
+    <script src="js/analysis.js"></script>
+  </body>
+</html>

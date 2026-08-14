@@ -1,1 +1,163 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SCUDERIA 16 — Race Control</title><link rel="stylesheet" href="css/style.css"></head><body><main class="page"><section class="hero"><div class="hero-copy"><div class="eyebrow">2026 / Race Intelligence</div><h1 class="display">SCUDERIA<br><span>16</span></h1><p class="hero-sub">A private race-control dashboard for the Ferrari faithful — live season context, race intelligence, fantasy strategy, and one very fast Monegasque.</p><div class="hero-actions"><a class="btn btn-primary" href="fantasy.html">Open Predictor →</a><a class="btn btn-ghost" href="charles.html">Enter The 16</a></div><div class="panel" style="margin-top:34px;max-width:560px"><div class="panel-title"><h3>Next Race</h3><span id="race-status">LOADING</span></div><div class="race-strip"><div><div class="big-number" id="next-race">—</div><div class="muted" id="race-date">Loading calendar…</div></div><div class="badge red" id="countdown">—</div></div></div></div><div class="hero-visual"><div class="driver-card"><div class="driver-art"><img data-leclerc-image alt="Charles Leclerc" style="position:absolute;z-index:2;left:50%;bottom:-8px;transform:translateX(-50%);height:92%;width:auto;max-width:125%;object-fit:contain;filter:drop-shadow(0 25px 28px rgba(0,0,0,.6))"></div><div class="driver-meta"><div><strong>CHARLES LECLERC</strong><small>SCUDERIA FERRARI · MONACO</small></div><div class="number">16</div></div></div></div></section><section class="dashboard-grid"><div class="panel span-4"><div class="panel-title"><h3>Leclerc</h3><span>2026</span></div><div class="big-number" data-count="117">0</div><div class="muted">Grand Prix points</div><div class="stat-row" style="margin-top:20px"><div class="stat"><b>4</b><small>Position</small></div><div class="stat"><b>1</b><small>Win</small></div><div class="stat"><b>4</b><small>Podiums</small></div></div></div><div class="panel span-8"><div class="panel-title"><h3>Season Pulse</h3><span>Ferrari highlighted</span></div><div class="race-track"><svg viewBox="0 0 800 150"><path d="M30 95 C80 15 160 20 190 75 S280 145 335 70 S450 10 500 65 S620 145 680 55 S740 35 770 85" fill="none" stroke="#555" stroke-width="3"/><circle r="7" fill="#e10600"><animateMotion dur="7s" repeatCount="indefinite" path="M30 95 C80 15 160 20 190 75 S280 145 335 70 S450 10 500 65 S620 145 680 55 S740 35 770 85"/></circle></svg></div></div><div class="panel span-6"><div class="panel-title"><h3>Ferrari</h3><span>Scuderia</span></div><div class="stat-row"><div class="stat"><b>117</b><small>Leclerc pts</small></div><div class="stat"><b>151</b><small>Hamilton pts</small></div><div class="stat"><b>2</b><small>Wins</small></div></div><a class="btn btn-ghost" style="margin-top:18px" href="ferrari.html">Open Garage →</a></div><div class="panel span-6"><div class="panel-title"><h3>Fantasy Lab</h3><span>Model</span></div><p class="muted">Turn recent form, team pace and wet-weather context into a projected fantasy lineup.</p><a class="btn btn-primary" href="fantasy.html">Build a Team →</a></div></section><footer class="footer">SCUDERIA 16 · <span class="secret" data-message="FORZA FERRARI. 🏁">click the 16</span></footer></main><script src="js/driver-image.js"></script><script src="js/driver-image-fix.js"></script><script src="js/app.js"></script><script>fetch('data/next_race.json').then(r=>r.json()).then(r=>{document.getElementById('next-race').textContent=r.eventName;document.getElementById('race-date').textContent=`${r.location}, ${r.country} · ${new Date(r.date).toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'})}`;const d=Math.max(0,Math.ceil((new Date(r.date)-new Date())/86400000));document.getElementById('countdown').textContent=d===0?'RACE DAY':`${d} DAYS`;document.getElementById('race-status').textContent='UP NEXT'}).catch(()=>document.getElementById('race-status').textContent='SEASON COMPLETE')</script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SCUDERIA 16 — Race Control</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow">2026 / Race Intelligence</div>
+          <h1 class="display">SCUDERIA<br /><span>16</span></h1>
+          <p class="hero-sub">
+            A private race-control dashboard for the Ferrari faithful — live
+            season context, race intelligence, fantasy strategy, and one very
+            fast Monegasque.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="fantasy.html">Open Predictor →</a
+            ><a class="btn btn-ghost" href="charles.html">Enter The 16</a>
+          </div>
+          <div class="panel" style="margin-top: 34px; max-width: 560px">
+            <div class="panel-title">
+              <h3>Next Race</h3>
+              <span id="race-status">LOADING</span>
+            </div>
+            <div class="race-strip">
+              <div>
+                <div class="big-number" id="next-race">—</div>
+                <div class="muted" id="race-date">Loading calendar…</div>
+              </div>
+              <div class="badge red" id="countdown">—</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="driver-card">
+            <div class="driver-art">
+              <img
+                data-leclerc-image
+                alt="Charles Leclerc"
+                style="
+                  position: absolute;
+                  z-index: 2;
+                  left: 50%;
+                  bottom: -8px;
+                  transform: translateX(-50%);
+                  height: 92%;
+                  width: auto;
+                  max-width: 125%;
+                  object-fit: contain;
+                  filter: drop-shadow(0 25px 28px rgba(0, 0, 0, 0.6));
+                "
+              />
+            </div>
+            <div class="driver-meta">
+              <div>
+                <strong>CHARLES LECLERC</strong
+                ><small>SCUDERIA FERRARI · MONACO</small>
+              </div>
+              <div class="number">16</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="dashboard-grid">
+        <div class="panel span-4">
+          <div class="panel-title">
+            <h3>Leclerc</h3>
+            <span>2026</span>
+          </div>
+          <div class="big-number" data-count="117">0</div>
+          <div class="muted">Grand Prix points</div>
+          <div class="stat-row" style="margin-top: 20px">
+            <div class="stat"><b>4</b><small>Position</small></div>
+            <div class="stat"><b>1</b><small>Win</small></div>
+            <div class="stat"><b>4</b><small>Podiums</small></div>
+          </div>
+        </div>
+        <div class="panel span-8">
+          <div class="panel-title">
+            <h3>Season Pulse</h3>
+            <span>Ferrari highlighted</span>
+          </div>
+          <div class="race-track">
+            <svg viewBox="0 0 800 150">
+              <path
+                d="M30 95 C80 15 160 20 190 75 S280 145 335 70 S450 10 500 65 S620 145 680 55 S740 35 770 85"
+                fill="none"
+                stroke="#555"
+                stroke-width="3"
+              />
+              <circle r="7" fill="#e10600">
+                <animateMotion
+                  dur="7s"
+                  repeatCount="indefinite"
+                  path="M30 95 C80 15 160 20 190 75 S280 145 335 70 S450 10 500 65 S620 145 680 55 S740 35 770 85"
+                />
+              </circle>
+            </svg>
+          </div>
+        </div>
+        <div class="panel span-6">
+          <div class="panel-title">
+            <h3>Ferrari</h3>
+            <span>Scuderia</span>
+          </div>
+          <div class="stat-row">
+            <div class="stat"><b>117</b><small>Leclerc pts</small></div>
+            <div class="stat"><b>151</b><small>Hamilton pts</small></div>
+            <div class="stat"><b>2</b><small>Wins</small></div>
+          </div>
+          <a class="btn btn-ghost" style="margin-top: 18px" href="ferrari.html"
+            >Open Garage →</a
+          >
+        </div>
+        <div class="panel span-6">
+          <div class="panel-title">
+            <h3>Fantasy Lab</h3>
+            <span>Model</span>
+          </div>
+          <p class="muted">
+            Turn recent form, team pace and wet-weather context into a projected
+            fantasy lineup.
+          </p>
+          <a class="btn btn-primary" href="fantasy.html">Build a Team →</a>
+        </div>
+      </section>
+      <footer class="footer">
+        SCUDERIA 16 ·
+        <span class="secret" data-message="FORZA FERRARI. 🏁"
+          >click the 16</span
+        >
+      </footer>
+    </main>
+    <script src="js/driver-image.js"></script>
+    <script src="js/driver-image-fix.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+      fetch('data/next_race.json')
+        .then(r => r.json())
+        .then(r => {
+          document.getElementById('next-race').textContent = r.eventName;
+          document.getElementById('race-date').textContent =
+            `${r.location}, ${r.country} · ${new Date(r.date).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })}`;
+          const d = Math.max(
+            0,
+            Math.ceil((new Date(r.date) - new Date()) / 86400000)
+          );
+          document.getElementById('countdown').textContent =
+            d === 0 ? 'RACE DAY' : `${d} DAYS`;
+          document.getElementById('race-status').textContent = 'UP NEXT';
+        })
+        .catch(
+          () =>
+            (document.getElementById('race-status').textContent =
+              'SEASON COMPLETE')
+        );
+    </script>
+  </body>
+</html>
