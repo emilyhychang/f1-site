@@ -1,1 +1,1 @@
-const LECLERC_CUTOUT='data:image/webp;base64,UklGRgAA...';
+const LECLERC_CUTOUT='data:image/webp;base64,UklGRl5zZ...';
