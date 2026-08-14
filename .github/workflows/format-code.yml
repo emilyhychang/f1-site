@@ -17,17 +17,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Format site files with Prettier
-        run: npx --yes prettier@3 --write \
-          docs/css/enhancements.css \
-          docs/fantasy.html \
-          docs/ferrari.html \
-          docs/js/analysis.js \
-          docs/js/app.js \
-          docs/js/garage.js \
-          docs/js/predictor.js \
-          docs/js/results.js \
-          docs/js/schedule.js \
-          docs/schedule.html
+        run: npx --yes prettier@3 --write docs/css/enhancements.css docs/fantasy.html docs/ferrari.html docs/js/analysis.js docs/js/app.js docs/js/garage.js docs/js/predictor.js docs/js/results.js docs/js/schedule.js docs/schedule.html
 
       - name: Commit formatting changes
         run: |
