@@ -1239,3 +1239,144 @@ a {
 .spouse-secret:focus-visible {
   color: var(--red);
 }
+
+/* --- Charles page scrapbook --- */
+.leclerc-memories {
+  margin-top: 70px;
+  padding: clamp(24px, 4vw, 48px);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 14% 18%, rgba(225, 6, 0, 0.2), transparent 28%),
+    linear-gradient(145deg, #151519, #09090b 72%);
+}
+.memories-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  margin-bottom: 34px;
+}
+.memories-heading h2 {
+  max-width: 760px;
+  margin: 8px 0 0;
+  font-size: clamp(3rem, 7vw, 7rem);
+  line-height: 0.82;
+}
+.memories-heading p {
+  max-width: 260px;
+  margin: 0;
+  color: #aaa;
+  line-height: 1.55;
+}
+.memory-collage {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+  gap: clamp(20px, 3vw, 36px);
+  align-items: center;
+  padding: 12px clamp(4px, 2vw, 20px) 20px;
+}
+.memory-photo-stack {
+  display: grid;
+  gap: 26px;
+}
+.memory-photo {
+  position: relative;
+  margin: 0;
+  padding: 10px 10px 17px;
+  background: #f5f1e8;
+  color: #19191d;
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.42);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+.memory-photo::before {
+  content: '';
+  position: absolute;
+  z-index: 2;
+  width: 82px;
+  height: 22px;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  background: rgba(225, 6, 0, 0.75);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28);
+}
+.memory-photo img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  filter: saturate(0.95) contrast(1.03);
+}
+.memory-photo figcaption {
+  padding: 13px 7px 0;
+  font: 800 0.72rem/1.2 ui-monospace, monospace;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.memory-photo-feature {
+  transform: rotate(-1.7deg);
+}
+.memory-photo-feature img {
+  aspect-ratio: 3 / 4;
+}
+.memory-photo-leo {
+  width: min(82%, 330px);
+  justify-self: start;
+  transform: rotate(3.2deg);
+}
+.memory-photo-family {
+  width: min(90%, 380px);
+  justify-self: end;
+  transform: rotate(-2.4deg);
+}
+.memory-photo-leo img,
+.memory-photo-family img {
+  aspect-ratio: 1;
+}
+.memory-photo:hover {
+  z-index: 3;
+  transform: rotate(0deg) translateY(-5px);
+  box-shadow: 0 32px 70px rgba(0, 0, 0, 0.55);
+}
+@media (max-width: 760px) {
+  .leclerc-memories {
+    margin-top: 42px;
+    padding: 24px 16px 30px;
+    border-radius: 20px;
+  }
+  .memories-heading {
+    display: block;
+    margin-bottom: 26px;
+  }
+  .memories-heading p {
+    margin-top: 16px;
+  }
+  .memory-collage {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding-inline: 8px;
+  }
+  .memory-photo-stack {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .memory-photo-leo,
+  .memory-photo-family {
+    width: 100%;
+  }
+}
+@media (max-width: 460px) {
+  .memory-photo-stack {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .memory-photo-leo,
+  .memory-photo-family {
+    width: 88%;
+  }
+  .memory-photo-family {
+    justify-self: end;
+  }
+}
