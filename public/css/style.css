@@ -1,0 +1,57 @@
+:root {
+    --red: #e10600;
+    --bg: #0d0d0f;
+    --card: #1a1a1e;
+    --text: #f2f2f2;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif; }
+  
+  nav { display: flex; gap: 1.5rem; padding: 1rem 2rem; background: #000; border-bottom: 3px solid var(--red); }
+  nav a { color: var(--text); text-decoration: none; font-weight: 600; }
+  nav a:hover { color: var(--red); }
+  
+  .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+  
+  table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+  th, td { padding: 0.6rem; text-align: left; border-bottom: 1px solid #333; }
+  th { color: var(--red); }
+  
+  h1 { border-left: 5px solid var(--red); padding-left: 0.8rem; margin-bottom: 1rem; }
+  
+  select { padding: 0.5rem; background: var(--card); color: var(--text); border: 1px solid #444; margin-bottom: 1rem; }
+  
+  .hero {
+    background: linear-gradient(180deg, #1a0000 0%, var(--bg) 100%);
+    padding: 2rem;
+    border-bottom: 2px solid var(--red);
+    text-align: center;
+  }
+  .hero h1 { border: none; padding: 0; margin-bottom: 1.5rem; font-size: 2.4rem; letter-spacing: 2px; }
+  
+  .race-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .next-race-badge {
+    background: var(--card);
+    border: 1px solid var(--red);
+    border-radius: 8px;
+    padding: 0.8rem 1.5rem;
+  }
+  .next-race-badge .label { color: var(--red); font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; }
+  .next-race-badge .name { font-size: 1.3rem; font-weight: 700; }
+  
+  #track-svg { display: block; max-width: 550px; width: 100%; }
+  
+  .ferrari-row { background: rgba(225, 6, 0, 0.12); }
+  .section-title { border-left: 4px solid var(--red); padding-left: 0.6rem; margin: 2rem 0 0.5rem; font-size: 1.3rem; }
+  canvas { margin-bottom: 1rem; }
+  
+  .stint-row { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem; }
+  .stint-row .driver-label { width: 50px; font-weight: 700; }
+  .stint-bar-track { flex: 1; display: flex; height: 22px; border-radius: 4px; overflow: hidden; background: #222; }
+  .stint-segment { height: 100%; }

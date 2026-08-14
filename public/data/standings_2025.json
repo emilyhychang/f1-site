@@ -1,0 +1,107 @@
+[
+  {
+    "driver": "Lando Norris",
+    "team": "McLaren",
+    "points": 394.0
+  },
+  {
+    "driver": "Max Verstappen",
+    "team": "Red Bull Racing",
+    "points": 389.0
+  },
+  {
+    "driver": "Oscar Piastri",
+    "team": "McLaren",
+    "points": 381.0
+  },
+  {
+    "driver": "George Russell",
+    "team": "Mercedes",
+    "points": 289.0
+  },
+  {
+    "driver": "Charles Leclerc",
+    "team": "Ferrari",
+    "points": 225.0
+  },
+  {
+    "driver": "Andrea Kimi Antonelli",
+    "team": "Mercedes",
+    "points": 135.0
+  },
+  {
+    "driver": "Lewis Hamilton",
+    "team": "Ferrari",
+    "points": 135.0
+  },
+  {
+    "driver": "Alexander Albon",
+    "team": "Williams",
+    "points": 70.0
+  },
+  {
+    "driver": "Carlos Sainz",
+    "team": "Williams",
+    "points": 54.0
+  },
+  {
+    "driver": "Nico Hulkenberg",
+    "team": "Kick Sauber",
+    "points": 51.0
+  },
+  {
+    "driver": "Fernando Alonso",
+    "team": "Aston Martin",
+    "points": 51.0
+  },
+  {
+    "driver": "Isack Hadjar",
+    "team": "Racing Bulls",
+    "points": 50.0
+  },
+  {
+    "driver": "Oliver Bearman",
+    "team": "Haas F1 Team",
+    "points": 39.0
+  },
+  {
+    "driver": "Liam Lawson",
+    "team": "Red Bull Racing",
+    "points": 38.0
+  },
+  {
+    "driver": "Esteban Ocon",
+    "team": "Haas F1 Team",
+    "points": 34.0
+  },
+  {
+    "driver": "Lance Stroll",
+    "team": "Aston Martin",
+    "points": 29.0
+  },
+  {
+    "driver": "Yuki Tsunoda",
+    "team": "Racing Bulls",
+    "points": 21.0
+  },
+  {
+    "driver": "Pierre Gasly",
+    "team": "Alpine",
+    "points": 20.0
+  },
+  {
+    "driver": "Gabriel Bortoleto",
+    "team": "Kick Sauber",
+    "points": 19.0
+  },
+  {
+    "driver": "Jack Doohan",
+    "team": "Alpine",
+    "points": 0.0
+  },
+  {
+    "driver": "Franco Colapinto",
+    "team": "Alpine",
+    "points": 0.0
+  }
+]

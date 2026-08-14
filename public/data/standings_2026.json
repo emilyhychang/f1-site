@@ -1,0 +1,112 @@
+[
+  {
+    "driver": "Kimi Antonelli",
+    "team": "Mercedes",
+    "points": 198.0
+  },
+  {
+    "driver": "Lewis Hamilton",
+    "team": "Ferrari",
+    "points": 151.0
+  },
+  {
+    "driver": "George Russell",
+    "team": "Mercedes",
+    "points": 134.0
+  },
+  {
+    "driver": "Charles Leclerc",
+    "team": "Ferrari",
+    "points": 117.0
+  },
+  {
+    "driver": "Lando Norris",
+    "team": "McLaren",
+    "points": 102.0
+  },
+  {
+    "driver": "Max Verstappen",
+    "team": "Red Bull Racing",
+    "points": 100.0
+  },
+  {
+    "driver": "Oscar Piastri",
+    "team": "McLaren",
+    "points": 75.0
+  },
+  {
+    "driver": "Isack Hadjar",
+    "team": "Red Bull Racing",
+    "points": 68.0
+  },
+  {
+    "driver": "Pierre Gasly",
+    "team": "Alpine",
+    "points": 41.0
+  },
+  {
+    "driver": "Liam Lawson",
+    "team": "Racing Bulls",
+    "points": 40.0
+  },
+  {
+    "driver": "Arvid Lindblad",
+    "team": "Racing Bulls",
+    "points": 22.0
+  },
+  {
+    "driver": "Franco Colapinto",
+    "team": "Alpine",
+    "points": 19.0
+  },
+  {
+    "driver": "Oliver Bearman",
+    "team": "Haas F1 Team",
+    "points": 17.0
+  },
+  {
+    "driver": "Gabriel Bortoleto",
+    "team": "Audi",
+    "points": 10.0
+  },
+  {
+    "driver": "Carlos Sainz",
+    "team": "Williams",
+    "points": 6.0
+  },
+  {
+    "driver": "Alexander Albon",
+    "team": "Williams",
+    "points": 5.0
+  },
+  {
+    "driver": "Esteban Ocon",
+    "team": "Haas F1 Team",
+    "points": 3.0
+  },
+  {
+    "driver": "Nico Hulkenberg",
+    "team": "Audi",
+    "points": 2.0
+  },
+  {
+    "driver": "Fernando Alonso",
+    "team": "Aston Martin",
+    "points": 1.0
+  },
+  {
+    "driver": "Sergio Perez",
+    "team": "Cadillac",
+    "points": 0.0
+  },
+  {
+    "driver": "Lance Stroll",
+    "team": "Aston Martin",
+    "points": 0.0
+  },
+  {
+    "driver": "Valtteri Bottas",
+    "team": "Cadillac",
+    "points": 0.0
+  }
+]

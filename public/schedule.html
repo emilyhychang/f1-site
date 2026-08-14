@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Schedule - F1 Data Hub</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="results.html">Results</a>
+    <a href="analysis.html">Analysis</a>
+  </nav>
+  <div class="container">
+    <h1>2025 Race Calendar</h1>
+    <table id="schedule-table">
+      <thead><tr><th>Round</th><th>Event</th><th>Location</th><th>Date</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <script>
+    fetch('data/schedule_2026.json')
+      .then(r => r.json())
+      .then(data => {
+        const tbody = document.querySelector('#schedule-table tbody');
+        data.forEach(e => {
+          tbody.innerHTML += `<tr><td>${e.RoundNumber}</td><td>${e.EventName}</td><td>${e.Location}</td><td>${e.EventDate.split('T')[0]}</td></tr>`;
+        });
+      });
+  </script>
+</body>
+</html>
