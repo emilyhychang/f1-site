@@ -1,6 +1,5 @@
-const LECLERC_WEBP_PREFIX =
-  'UklGRsY6AABXRUJQVlA4WAoAAAAQAAAAPwEAPwEAQUxQSGgNAAAB8EBr27Kn1bbtxxkXrAk0F';
-window.LECLERC_CUTOUT =
-  'data:image/webp;base64,' +
-  LECLERC_WEBP_PREFIX +
-  LECLERC_CUTOUT.slice('data:image/webp;base64,'.length);
+// The cutout is already a complete WebP data URI in driver-image.js.
+// Expose it globally without rewriting its header or bytes.
+if (typeof LECLERC_CUTOUT === 'string' && LECLERC_CUTOUT.startsWith('data:image/')) {
+  window.LECLERC_CUTOUT = LECLERC_CUTOUT;
+}
