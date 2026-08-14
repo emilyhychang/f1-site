@@ -1,0 +1,1 @@
+const LECLERC_CUTOUT='data:image/webp;base64,UklGRgAA...';
