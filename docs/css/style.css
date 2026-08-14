@@ -1108,7 +1108,43 @@ a {
   font-size: clamp(4rem, 9vw, 8rem);
 }
 .driver-info-panel .stat-row {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.nationality-short {
+  display: none;
+}
+.info-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.dachshund-icon {
+  width: 46px;
+  height: auto;
+  flex: 0 0 auto;
+  fill: var(--red);
+  overflow: visible;
+  filter: drop-shadow(0 3px 7px rgba(225, 6, 0, 0.3));
+}
+.dachshund-eye {
+  fill: #09090b;
+}
+@media (max-width: 760px) {
+  .driver-info-panel .stat-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .nationality-full {
+    display: none;
+  }
+  .nationality-short {
+    display: inline;
+  }
+  .info-with-icon {
+    gap: 7px;
+  }
+  .dachshund-icon {
+    width: 38px;
+  }
 }
 .garage-page .driver-mini {
   min-height: 240px;
