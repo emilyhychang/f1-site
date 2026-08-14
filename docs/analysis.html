@@ -5,7 +5,43 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Analysis — Scuderia 16</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/enhancements.css" data-enhancements />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+    <style>
+      #tire-chart {
+        width: 100%;
+      }
+
+      #tire-chart .stint-shell {
+        width: 100%;
+        overflow-x: auto;
+        padding: 8px 0 12px;
+      }
+
+      #tire-chart .stint-row {
+        width: 100%;
+        min-width: 0;
+        grid-template-columns: 54px minmax(0, 1fr);
+        gap: 12px;
+        margin: 8px 0;
+      }
+
+      #tire-chart .stint-bar-track {
+        width: 100%;
+        min-width: 0;
+        height: 28px;
+      }
+
+      #tire-chart .stint-scale {
+        width: calc(100% - 66px);
+        min-width: 0;
+        margin-left: 66px;
+      }
+
+      #tire-chart .tire-legend {
+        padding-top: 4px;
+      }
+    </style>
   </head>
   <body>
     <main class="page">
@@ -16,6 +52,7 @@
         </div>
         <select class="select" id="round-picker"></select>
       </div>
+
       <div class="dashboard-grid">
         <div class="panel span-6 chart-panel">
           <div class="panel-title">
@@ -37,6 +74,7 @@
             </table>
           </div>
         </div>
+
         <div class="panel span-6 chart-panel">
           <div class="panel-title">
             <h3>Lap Times</h3>
@@ -44,6 +82,7 @@
           </div>
           <canvas id="laptime-chart"></canvas>
         </div>
+
         <div class="panel span-12">
           <div class="panel-title">
             <h3>Tire Strategy</h3>
@@ -51,6 +90,7 @@
           </div>
           <div id="tire-chart"></div>
         </div>
+
         <div class="panel span-6 chart-panel">
           <div class="panel-title">
             <h3>Speed</h3>
@@ -58,6 +98,7 @@
           </div>
           <canvas id="speed-chart"></canvas>
         </div>
+
         <div class="panel span-6 chart-panel">
           <div class="panel-title">
             <h3>Throttle / Brake</h3>
@@ -67,6 +108,7 @@
         </div>
       </div>
     </main>
+
     <script src="js/app.js"></script>
     <script src="js/analysis.js"></script>
   </body>
