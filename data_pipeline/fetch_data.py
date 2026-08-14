@@ -1,7 +1,10 @@
 import fastf1
+import html
 import json
 import os
 import pandas as pd
+import re
+import requests
 from datetime import datetime, timedelta, timezone
 
 os.makedirs('data_pipeline/cache', exist_ok=True)
@@ -25,8 +28,11 @@ def race_data_should_be_available(event):
         race_time = pd.to_datetime(race_time, utc=True)
     return race_time + timedelta(hours=6) <= now
 
-schedule_out = schedule[['RoundNumber', 'EventName', 'Location', 'Country', 'EventDate']].copy()
+schedule_out = schedule[
+    ['RoundNumber', 'EventName', 'Location', 'Country', 'EventDate', 'Session5DateUtc']
+].copy()
 schedule_out['EventDate'] = schedule_out['EventDate'].astype(str)
+schedule_out['Session5DateUtc'] = schedule_out['Session5DateUtc'].astype(str)
 schedule_out.to_json(f'{OUT_DIR}/schedule_{YEAR}.json', orient='records', indent=2)
 
 standings = {}
@@ -64,7 +70,9 @@ schedule_dates = schedule.copy()
 
 print("DEBUG — current time:", now)
 print("DEBUG — schedule dates:\n", schedule_dates[['RoundNumber', 'EventName', 'EventDate']].to_string())
-upcoming = schedule_dates[schedule_dates['EventDate'] > now].sort_values('EventDate')
+upcoming = schedule_dates[
+    ~schedule_dates.apply(race_data_should_be_available, axis=1)
+].sort_values('EventDate')
 
 if not upcoming.empty:
     next_event = upcoming.iloc[0]
@@ -73,7 +81,8 @@ if not upcoming.empty:
         'eventName': next_event['EventName'],
         'location': next_event['Location'],
         'country': next_event['Country'],
-        'date': str(next_event['EventDate'])
+        'date': str(next_event['EventDate']),
+        'raceStart': str(next_event['Session5DateUtc'])
     }
     with open(f'{OUT_DIR}/next_race.json', 'w') as f:
         json.dump(next_race_info, f, indent=2)
@@ -91,6 +100,45 @@ if not upcoming.empty:
         print(f"Could not fetch track shape: {e}")
 else:
     print("No upcoming races found in schedule.")
+
+# --- Official Formula 1 career statistics for Charles Leclerc ---
+CAREER_STATS_URL = 'https://www.formula1.com/en/drivers/charles-leclerc'
+CAREER_FIELDS = (
+    'Grands Prix Entered',
+    'Career Points',
+    'Highest Race Finish',
+    'Podiums',
+    'Pole Positions',
+    'World Championships',
+)
+
+try:
+    response = requests.get(
+        CAREER_STATS_URL,
+        headers={'User-Agent': 'Mozilla/5.0 (compatible; Scuderia16DataBot/1.0)'},
+        timeout=30,
+    )
+    response.raise_for_status()
+    official_stats = {}
+
+    for field in CAREER_FIELDS:
+        match = re.search(
+            rf'<dt[^>]*>\s*{re.escape(field)}\s*</dt>\s*<dd[^>]*>(.*?)</dd>',
+            response.text,
+            flags=re.IGNORECASE | re.DOTALL,
+        )
+        if not match:
+            raise ValueError(f'Official F1 field not found: {field}')
+        value = re.sub(r'<[^>]+>', '', match.group(1)).strip()
+        official_stats[field] = html.unescape(value)
+
+    official_stats['source'] = CAREER_STATS_URL
+    official_stats['updatedAt'] = now.isoformat()
+    with open(f'{OUT_DIR}/career_stats.json', 'w') as file:
+        json.dump(official_stats, file, indent=2)
+    print('Official Charles Leclerc career statistics updated.')
+except Exception as error:
+    print(f'Could not refresh official career statistics; keeping existing file: {error}')
 # --- Deeper race analysis: lap times, tire strategy, fastest laps, telemetry ---
 ANALYSIS_DIR = f'{OUT_DIR}/analysis'
 os.makedirs(ANALYSIS_DIR, exist_ok=True)

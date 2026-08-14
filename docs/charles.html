@@ -54,24 +54,28 @@
         <article class="panel span-5">
           <div class="panel-title">
             <h3>Career Stats</h3>
-            <span>Through 2026</span>
+            <span>Official F1 totals</span>
           </div>
           <div class="stat-row">
             <div class="stat">
-              <b data-count="182">0</b><small>Grand Prix</small>
+              <b data-career-stat="Grands Prix Entered">182</b><small>Grands Prix entered</small>
             </div>
             <div class="stat">
-              <b data-count="54">0</b><small>Podiums</small>
+              <b data-career-stat="Career Points">1810</b><small>Career points</small>
             </div>
-            <div class="stat"><b data-count="27">0</b><small>Poles</small></div>
+            <div class="stat">
+              <b data-career-stat="Highest Race Finish">1 (x9)</b><small>Highest race finish</small>
+            </div>
           </div>
           <div class="stat-row">
-            <div class="stat"><b data-count="8">0</b><small>Wins</small></div>
             <div class="stat">
-              <b data-count="18">0</b><small>Fastest laps</small>
+              <b data-career-stat="Podiums">54</b><small>Podiums</small>
             </div>
             <div class="stat">
-              <b data-count="1357">0</b><small>Career points</small>
+              <b data-career-stat="Pole Positions">27</b><small>Pole positions</small>
+            </div>
+            <div class="stat">
+              <b data-career-stat="World Championships">0</b><small>World championships</small>
             </div>
           </div>
         </article>
@@ -154,30 +158,44 @@
             <h3>2026 Race Results</h3>
             <span>Ferrari red</span>
           </div>
-          <div class="result-strip" aria-label="2026 race results" tabindex="0">
-            <div class="result-chip">
-              <small>Bahrain</small><b>P2</b><span>18 pts</span>
-            </div>
-            <div class="result-chip">
-              <small>Saudi Arabia</small><b>P1</b><span>25 pts</span>
-            </div>
+          <div
+            class="result-strip"
+            data-charles-results
+            aria-label="Charles Leclerc's 2026 race results, ordered by round"
+            tabindex="0"
+          >
             <div class="result-chip">
               <small>Australia</small><b>P3</b><span>15 pts</span>
-            </div>
-            <div class="result-chip">
-              <small>Japan</small><b>P2</b><span>18 pts</span>
             </div>
             <div class="result-chip">
               <small>China</small><b>P4</b><span>12 pts</span>
             </div>
             <div class="result-chip">
-              <small>Miami</small><b>P1</b><span>25 pts</span>
+              <small>Japan</small><b>P3</b><span>15 pts</span>
             </div>
             <div class="result-chip">
-              <small>Emilia-Romagna</small><b>P3</b><span>15 pts</span>
+              <small>Miami</small><b>P8</b><span>4 pts</span>
             </div>
             <div class="result-chip">
-              <small>Monaco</small><b>P2</b><span>18 pts</span>
+              <small>Canada</small><b>P4</b><span>12 pts</span>
+            </div>
+            <div class="result-chip">
+              <small>Monaco</small><b>DNF</b><span>0 pts</span>
+            </div>
+            <div class="result-chip">
+              <small>Barcelona</small><b>DNF</b><span>0 pts</span>
+            </div>
+            <div class="result-chip">
+              <small>Austria</small><b>P8</b><span>4 pts</span>
+            </div>
+            <div class="result-chip">
+              <small>Great Britain</small><b>P1</b><span>25 pts</span>
+            </div>
+            <div class="result-chip">
+              <small>Belgium</small><b>P2</b><span>18 pts</span>
+            </div>
+            <div class="result-chip">
+              <small>Hungary</small><b>P4</b><span>12 pts</span>
             </div>
           </div>
         </article>
@@ -201,6 +219,7 @@
       </section>
     </main>
     <script src="js/app.js?v=layout-3"></script>
+    <script src="js/charles.js?v=career-stats-2"></script>
     <footer style="color: #6c757d; text-align: center; padding: 20px; font-size: 14px;">
       ♡ ryan, ﾒ૦ emily
     </footer>

@@ -8,8 +8,9 @@ on:
       - '.github/workflows/update-race-data.yml'
       - 'data_pipeline/**'
   schedule:
-    # GitHub Actions schedules use UTC. These runs cover race weekends and
-    # the day after, while avoiding unnecessary daily pipeline work.
+    # Refresh official schedule/profile data every day, plus more frequently
+    # while race results are becoming available on Sundays and Mondays.
+    - cron: '17 6 * * 2-5'
     - cron: '17 */6 * * 0,1,6'
 
 permissions:

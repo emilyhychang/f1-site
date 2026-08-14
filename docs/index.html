@@ -134,21 +134,59 @@
 
     <script src="js/app.js?v=layout-3"></script>
     <script>
-      fetch('data/next_race.json')
+      const raceDate = value => new Date(String(value).replace(' ', 'T'));
+
+      const raceCompletionTime = event => {
+        if (event.Session5DateUtc && event.Session5DateUtc !== 'NaT') {
+          return raceDate(event.Session5DateUtc).getTime() + 6 * 60 * 60 * 1000;
+        }
+        return raceDate(event.EventDate).getTime() + 30 * 60 * 60 * 1000;
+      };
+
+      const calendarDaysUntil = date => {
+        const now = new Date();
+        const today = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+        const target = Date.UTC(
+          date.getUTCFullYear(),
+          date.getUTCMonth(),
+          date.getUTCDate()
+        );
+        return Math.max(0, Math.round((target - today) / 86400000));
+      };
+
+      const renderNextRace = schedule => {
+        const now = Date.now();
+        const race = schedule
+          .filter(event => Number(event.RoundNumber) > 0)
+          .sort((a, b) => Number(a.RoundNumber) - Number(b.RoundNumber))
+          .find(event => raceCompletionTime(event) > now);
+
+        if (!race) {
+          document.getElementById('race-status').textContent = 'SEASON COMPLETE';
+          document.getElementById('countdown').textContent = '—';
+          return;
+        }
+
+        const date = raceDate(race.EventDate);
+        const days = calendarDaysUntil(date);
+        document.getElementById('next-race').textContent = race.EventName;
+        document.getElementById('race-date').textContent =
+          `${race.Location}, ${race.Country} · ${date.toLocaleDateString(undefined, {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric',
+            timeZone: 'UTC'
+          })}`;
+        document.getElementById('countdown').textContent =
+          days === 0 ? 'RACE DAY' : `${days} DAYS`;
+        document.getElementById('race-status').textContent = 'UP NEXT';
+      };
+
+      fetch('data/schedule_2026.json')
         .then(response => response.json())
-        .then(race => {
-          document.getElementById('next-race').textContent = race.eventName;
-          document.getElementById('race-date').textContent =
-            `${race.location}, ${race.country} · ${new Date(race.date).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })}`;
-
-          const days = Math.max(
-            0,
-            Math.ceil((new Date(race.date) - new Date()) / 86400000)
-          );
-
-          document.getElementById('countdown').textContent =
-            days === 0 ? 'RACE DAY' : `${days} DAYS`;
-          document.getElementById('race-status').textContent = 'UP NEXT';
+        .then(schedule => {
+          renderNextRace(schedule);
+          window.setInterval(() => renderNextRace(schedule), 60000);
         })
         .catch(() => {
           document.getElementById('race-status').textContent =

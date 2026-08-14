@@ -14,6 +14,7 @@ standings = load('standings_2026.json')
 drivers = load('model/driver_summary_2026.json')
 teams = load('model/team_summary_2026.json')
 next_race = load('next_race.json')
+career_stats = load('career_stats.json')
 
 if not isinstance(standings, list) or len(standings) < 10:
     raise ValueError('Standings validation failed: fewer than 10 drivers')
@@ -27,5 +28,17 @@ if not isinstance(teams, dict) or len(teams) < 5:
 required_next_race_fields = {'round', 'eventName', 'location', 'country', 'date'}
 if not required_next_race_fields.issubset(next_race):
     raise ValueError('Next-race validation failed: required fields are missing')
+
+required_career_fields = {
+    'Grands Prix Entered',
+    'Career Points',
+    'Highest Race Finish',
+    'Podiums',
+    'Pole Positions',
+    'World Championships',
+    'source',
+}
+if not required_career_fields.issubset(career_stats):
+    raise ValueError('Career-stat validation failed: official fields are missing')
 
 print('Generated F1 data passed safety checks.')
