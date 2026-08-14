@@ -12,7 +12,7 @@
     "DriverNumber":"3",
     "Abbreviation":"VER",
     "FullName":"Max Verstappen",
-    "TeamName":"Red Bull Racing",
+    "TeamName":"Red Bull",
     "Position":2.0,
     "Points":18.0,
     "Status":"Finished"
@@ -20,7 +20,7 @@
   {
     "DriverNumber":"12",
     "Abbreviation":"ANT",
-    "FullName":"Kimi Antonelli",
+    "FullName":"Andrea Kimi Antonelli",
     "TeamName":"Mercedes",
     "Position":3.0,
     "Points":15.0,
@@ -48,7 +48,7 @@
     "DriverNumber":"6",
     "Abbreviation":"HAD",
     "FullName":"Isack Hadjar",
-    "TeamName":"Red Bull Racing",
+    "TeamName":"Red Bull",
     "Position":6.0,
     "Points":8.0,
     "Status":"Finished"
@@ -75,7 +75,7 @@
     "DriverNumber":"30",
     "Abbreviation":"LAW",
     "FullName":"Liam Lawson",
-    "TeamName":"Racing Bulls",
+    "TeamName":"RB F1 Team",
     "Position":9.0,
     "Points":2.0,
     "Status":"Lapped"
@@ -84,7 +84,7 @@
     "DriverNumber":"41",
     "Abbreviation":"LIN",
     "FullName":"Arvid Lindblad",
-    "TeamName":"Racing Bulls",
+    "TeamName":"RB F1 Team",
     "Position":10.0,
     "Points":1.0,
     "Status":"Lapped"
@@ -101,7 +101,7 @@
   {
     "DriverNumber":"27",
     "Abbreviation":"HUL",
-    "FullName":"Nico Hulkenberg",
+    "FullName":"Nico H\u00fclkenberg",
     "TeamName":"Audi",
     "Position":12.0,
     "Points":0.0,
@@ -111,7 +111,7 @@
     "DriverNumber":"10",
     "Abbreviation":"GAS",
     "FullName":"Pierre Gasly",
-    "TeamName":"Alpine",
+    "TeamName":"Alpine F1 Team",
     "Position":13.0,
     "Points":0.0,
     "Status":"Lapped"
@@ -129,7 +129,7 @@
     "DriverNumber":"43",
     "Abbreviation":"COL",
     "FullName":"Franco Colapinto",
-    "TeamName":"Alpine",
+    "TeamName":"Alpine F1 Team",
     "Position":15.0,
     "Points":0.0,
     "Status":"Lapped"
@@ -182,8 +182,8 @@
   {
     "DriverNumber":"11",
     "Abbreviation":"PER",
-    "FullName":"Sergio Perez",
-    "TeamName":"Cadillac",
+    "FullName":"Sergio P\u00e9rez",
+    "TeamName":"Cadillac F1 Team",
     "Position":21.0,
     "Points":0.0,
     "Status":"Retired"
@@ -192,7 +192,7 @@
     "DriverNumber":"77",
     "Abbreviation":"BOT",
     "FullName":"Valtteri Bottas",
-    "TeamName":"Cadillac",
+    "TeamName":"Cadillac F1 Team",
     "Position":22.0,
     "Points":0.0,
     "Status":"Retired"
