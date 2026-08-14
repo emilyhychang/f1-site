@@ -1,4 +1,4 @@
-const NAV = `<nav class="site-nav"><a class="brand" href="index.html">SCUDERIA <span>16</span></a><div class="nav-links"><a href="index.html">Race Control</a><a href="schedule.html">Calendar</a><a href="results.html">Results</a><a href="analysis.html">Analysis</a><a href="fantasy.html">Predictor</a><a href="ferrari.html">Ferrari</a><a href="charles.html">Charles</a></div><div class="nav-16">LEC / 16</div></nav>`;
+const NAV = `<nav class="site-nav"><a class="brand" href="index.html">SCUDERIA <span>16</span></a><div class="nav-links" id="site-menu"><a href="index.html">Race Control</a><a href="schedule.html">Calendar</a><a href="results.html">Results</a><a href="analysis.html">Analysis</a><a href="fantasy.html">Predictor</a><a href="ferrari.html">Ferrari</a><a href="charles.html">Charles</a></div><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation menu"><span></span><span></span><span></span></button><div class="nav-16">LEC / 16</div></nav>`;
 document.addEventListener('DOMContentLoaded', () => {
   if (!document.querySelector('link[data-enhancements]')) {
     const link = document.createElement('link');
@@ -11,6 +11,31 @@ document.addEventListener('DOMContentLoaded', () => {
   const current = location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a').forEach(a => {
     if (a.getAttribute('href') === current) a.classList.add('active');
+  });
+  const nav = document.querySelector('.site-nav');
+  const navToggle = document.querySelector('.nav-toggle');
+  const closeMenu = () => {
+    nav.classList.remove('menu-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Open navigation menu');
+  };
+  navToggle.addEventListener('click', event => {
+    event.stopPropagation();
+    const isOpen = nav.classList.toggle('menu-open');
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+    navToggle.setAttribute(
+      'aria-label',
+      isOpen ? 'Close navigation menu' : 'Open navigation menu',
+    );
+  });
+  document.querySelectorAll('.nav-links a').forEach(a =>
+    a.addEventListener('click', closeMenu),
+  );
+  document.addEventListener('click', event => {
+    if (!nav.contains(event.target)) closeMenu();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') closeMenu();
   });
   if (window.Chart) {
     Chart.defaults.color = '#8e8e98';
