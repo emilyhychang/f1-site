@@ -5,6 +5,43 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Results — Scuderia 16</title>
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+      .results-visuals {
+        display: grid;
+        gap: 14px;
+      }
+
+      .results-chart-block {
+        border-top: 1px solid var(--line);
+        padding-top: 14px;
+      }
+
+      .results-chart-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 8px;
+      }
+
+      .results-chart-title h4 {
+        margin: 0;
+        font-size: 0.68rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      .results-chart-title span {
+        color: #666;
+        font-size: 0.58rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .results-chart-block canvas {
+        width: 100% !important;
+        height: 145px !important;
+      }
+    </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
   </head>
   <body>
@@ -16,6 +53,7 @@
         </div>
         <select class="select" id="round-picker"></select>
       </div>
+
       <div class="dashboard-grid">
         <div class="panel span-8">
           <div class="panel-title">
@@ -37,15 +75,42 @@
             </table>
           </div>
         </div>
+
         <div class="panel span-4 chart-panel">
           <div class="panel-title">
-            <h3>Points</h3>
-            <span>Round</span>
+            <h3>Race Intelligence</h3>
+            <span id="chart-round-label">ROUND</span>
           </div>
-          <canvas id="points-chart"></canvas>
+
+          <div class="results-visuals">
+            <div class="results-chart-block">
+              <div class="results-chart-title">
+                <h4>Points</h4>
+                <span>This round</span>
+              </div>
+              <canvas id="points-chart"></canvas>
+            </div>
+
+            <div class="results-chart-block">
+              <div class="results-chart-title">
+                <h4>Championship Trajectory</h4>
+                <span>Cumulative</span>
+              </div>
+              <canvas id="cumulative-chart"></canvas>
+            </div>
+
+            <div class="results-chart-block">
+              <div class="results-chart-title">
+                <h4>Position Fight</h4>
+                <span>Lower is better</span>
+              </div>
+              <canvas id="position-chart"></canvas>
+            </div>
+          </div>
         </div>
       </div>
     </main>
+
     <script src="js/app.js"></script>
     <script src="js/results.js"></script>
   </body>
