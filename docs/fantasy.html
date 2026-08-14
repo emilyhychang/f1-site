@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fantasy - Garage 16</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="results.html">Results</a>
+    <a href="analysis.html">Analysis</a>
+    <a href="fantasy.html">Fantasy</a>
+  </nav>
+
+  <div class="container">
+    <h1>Fantasy Projections</h1>
+    <p class="model-note">Projections weigh each driver's last 5 races and current team pace. If rain is forecast for the next race, wet-weather results are used instead of dry. Track type is shown for context — we don't have enough per-circuit history yet to weight it numerically, so it's not faked into the score.</p>
+
+    <div id="weather-badge" class="weather-badge">Loading forecast...</div>
+
+    <h2 class="section-title">Pick Your Team (up to 5)</h2>
+    <div id="team-summary-bar" class="team-summary-bar">Selected: 0/5 · Projected total: 0</div>
+    <div id="driver-picks"></div>
+  </div>
+
+  <script src="js/fantasy.js"></script>
+</body>
+</html>

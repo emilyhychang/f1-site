@@ -143,3 +143,78 @@ for _, event in schedule.iterrows():
         continue
 
 print("Analysis data pipeline complete.")
+# --- Fantasy model inputs ---
+MODEL_DIR = f'{OUT_DIR}/model'
+os.makedirs(MODEL_DIR, exist_ok=True)
+
+driver_race_history = {}
+
+for _, event in schedule.iterrows():
+    rnd = int(event['RoundNumber'])
+    if rnd == 0:
+        continue
+    try:
+        session = fastf1.get_session(YEAR, rnd, 'R')
+        session.load(laps=False, telemetry=False, weather=True)
+        if session.results.empty:
+            continue
+
+        is_wet = False
+        try:
+            if not session.weather_data.empty:
+                is_wet = bool(session.weather_data['Rainfall'].any())
+        except Exception:
+            pass
+
+        for _, row in session.results.iterrows():
+            drv = row['Abbreviation']
+            pos = row['Position']
+            pts = row['Points']
+            driver_race_history.setdefault(drv, []).append({
+                'round': rnd,
+                'position': float(pos) if pd.notna(pos) else None,
+                'points': float(pts) if pd.notna(pts) else 0,
+                'wet': is_wet,
+                'team': row['TeamName']
+            })
+    except Exception as e:
+        print(f"Skipping model data for round {rnd}: {e}")
+        continue
+
+driver_summary = {}
+for drv, races in driver_race_history.items():
+    races_sorted = sorted(races, key=lambda r: r['round'])
+    recent = races_sorted[-5:]
+    recent_positions = [r['position'] for r in recent if r['position'] is not None]
+    recent_points = [r['points'] for r in recent]
+
+    dry_positions = [r['position'] for r in races_sorted if not r['wet'] and r['position'] is not None]
+    wet_positions = [r['position'] for r in races_sorted if r['wet'] and r['position'] is not None]
+
+    team = races_sorted[-1]['team'] if races_sorted else None
+
+    driver_summary[drv] = {
+        'team': team,
+        'avgRecentPosition': sum(recent_positions) / len(recent_positions) if recent_positions else None,
+        'avgRecentPoints': sum(recent_points) / len(recent_points) if recent_points else 0,
+        'avgDryPosition': sum(dry_positions) / len(dry_positions) if dry_positions else None,
+        'avgWetPosition': sum(wet_positions) / len(wet_positions) if wet_positions else None,
+        'wetRaceCount': len(wet_positions),
+        'racesCount': len(races_sorted)
+    }
+
+with open(f'{MODEL_DIR}/driver_summary_{YEAR}.json', 'w') as f:
+    json.dump(driver_summary, f, indent=2)
+
+team_race_points = {}
+for drv, summary in driver_summary.items():
+    team = summary['team']
+    if team is None:
+        continue
+    team_race_points.setdefault(team, []).append(summary['avgRecentPoints'])
+
+team_summary = {team: sum(pts) / len(pts) for team, pts in team_race_points.items()}
+with open(f'{MODEL_DIR}/team_summary_{YEAR}.json', 'w') as f:
+    json.dump(team_summary, f, indent=2)
+
+print("Fantasy model data pipeline complete.")
