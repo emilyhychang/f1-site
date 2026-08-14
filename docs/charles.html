@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Charles Leclerc — The 16</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css?v=layout-3" />
   </head>
   <body>
     <main class="page">
@@ -81,7 +81,12 @@
             <span>Race intelligence</span>
           </div>
           <div class="performance-radar">
-            <svg class="radar-svg" viewBox="0 0 280 240">
+            <svg
+              class="radar-svg"
+              viewBox="-30 0 340 215"
+              role="img"
+              aria-label="Performance profile: qualifying, race pace, consistency, overtaking, and experience"
+            >
               <polygon
                 points="140,20 225,82 193,180 87,180 55,82"
                 fill="none"
@@ -144,12 +149,12 @@
             <div class="radar-score"><b>89</b><small>overall</small></div>
           </div>
         </article>
-        <article class="panel span-12">
+        <article class="panel span-12 driver-info-panel">
           <div class="panel-title">
             <h3>2026 Race Results</h3>
             <span>Ferrari red</span>
           </div>
-          <div class="result-strip">
+          <div class="result-strip" aria-label="2026 race results" tabindex="0">
             <div class="result-chip">
               <small>Bahrain</small><b>P2</b><span>18 pts</span>
             </div>
@@ -187,11 +192,15 @@
               <b>16 OCT 1997</b><small>Date of birth</small>
             </div>
             <div class="stat"><b>FERRARI</b><small>Team</small></div>
+            <div class="stat">
+              <b><button class="spouse-secret" type="button" data-secret-message="baddie alert!">Alexandra Malena Leclerc</button></b>
+              <small>Spouse</small>
+            </div>
           </div>
         </article>
       </section>
     </main>
-    <script src="js/app.js?v=menu-1"></script>
+    <script src="js/app.js?v=layout-3"></script>
     <footer style="color: #6c757d; text-align: center; padding: 20px; font-size: 14px;">
       ♡ ryan, ﾒ૦ emily
     </footer>

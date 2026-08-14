@@ -243,7 +243,7 @@ function loadTireStints(round) {
         row.className = 'stint-row';
 
         const label = document.createElement('div');
-        label.className = 'driver-label';
+        label.className = 'stint-driver-label';
         label.textContent = driver;
 
         const track = document.createElement('div');
@@ -261,6 +261,7 @@ function loadTireStints(round) {
 
             segment.className = 'stint-segment';
             segment.dataset.compound = compound;
+            segment.style.left = `${((startLap - 1) / maxLap) * 100}%`;
             segment.style.width = `${(lapCount / maxLap) * 100}%`;
             segment.style.background =
               TIRE_COLORS[compound] || TIRE_COLORS.UNKNOWN;

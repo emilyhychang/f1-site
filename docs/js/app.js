@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!document.querySelector('link[data-enhancements]')) {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = 'css/enhancements.css';
+    link.href = 'css/enhancements.css?v=layout-3';
     link.dataset.enhancements = '1';
     document.head.appendChild(link);
   }
@@ -62,9 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     tick();
   });
-  const secret = document.querySelector('.secret');
-  if (secret)
+  document.querySelectorAll('.secret, [data-secret-message]').forEach(secret => {
     secret.addEventListener('click', () => {
-      secret.textContent = secret.dataset.message || 'FORZA FERRARI.';
+      secret.textContent =
+        secret.dataset.secretMessage || secret.dataset.message || 'FORZA FERRARI.';
     });
+  });
 });

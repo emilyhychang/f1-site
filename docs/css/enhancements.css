@@ -74,7 +74,7 @@
   min-width: 650px;
   margin: 7px 0;
 }
-.stint-row .driver-label {
+.stint-driver-label {
   font:
     800 0.68rem ui-monospace,
     monospace;
@@ -83,7 +83,7 @@
 }
 .stint-bar-track {
   height: 24px;
-  display: flex;
+  display: block;
   border: 1px solid #24242b;
   background: #0b0b0e;
   border-radius: 6px;
@@ -93,7 +93,8 @@
 .stint-segment {
   height: 100%;
   min-width: 2px;
-  position: relative;
+  position: absolute;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -127,18 +128,21 @@
   margin-top: 12px;
 }
 .tire-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 0.62rem;
   color: #888;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 .tire-legend i {
-  display: inline-block;
+  display: block;
+  flex: 0 0 9px;
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  margin-right: 5px;
-  vertical-align: -1px;
+  margin: 0;
 }
 .calendar-hero {
   display: grid;

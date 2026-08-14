@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>SCUDERIA 16 — Race Control</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css?v=layout-3" />
   </head>
   <body>
     <main class="page">
@@ -42,18 +42,7 @@
               <img
                 src="assets/charles-leclerc.png"
                 alt="Charles Leclerc"
-                style="
-                  position: absolute;
-                  z-index: 2;
-                  left: 50%;
-                  bottom: -8px;
-                  transform: translateX(-50%);
-                  height: 92%;
-                  width: auto;
-                  max-width: 125%;
-                  object-fit: contain;
-                  filter: drop-shadow(0 25px 28px rgba(0, 0, 0, 0.6));
-                "
+                class="hero-driver-image"
               />
             </div>
             <div class="driver-meta">
@@ -143,7 +132,7 @@
       </footer>
     </main>
 
-    <script src="js/app.js?v=menu-1"></script>
+    <script src="js/app.js?v=layout-3"></script>
     <script>
       fetch('data/next_race.json')
         .then(response => response.json())
