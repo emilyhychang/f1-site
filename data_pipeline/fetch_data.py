@@ -4,6 +4,7 @@ import os
 import pandas as pd
 from datetime import datetime, timezone
 
+os.makedirs('data_pipeline/cache', exist_ok=True)
 fastf1.Cache.enable_cache('data_pipeline/cache')  # avoids re-downloading
 
 YEAR = 2026
