@@ -1,6 +1,6 @@
 [
   {
-    "driver": "Andrea Kimi Antonelli",
+    "driver": "Kimi Antonelli",
     "team": "Mercedes",
     "points": 198.0
   },
@@ -26,7 +26,7 @@
   },
   {
     "driver": "Max Verstappen",
-    "team": "Red Bull",
+    "team": "Red Bull Racing",
     "points": 100.0
   },
   {
@@ -36,27 +36,27 @@
   },
   {
     "driver": "Isack Hadjar",
-    "team": "Red Bull",
+    "team": "Red Bull Racing",
     "points": 68.0
   },
   {
     "driver": "Pierre Gasly",
-    "team": "Alpine F1 Team",
+    "team": "Alpine",
     "points": 41.0
   },
   {
     "driver": "Liam Lawson",
-    "team": "RB F1 Team",
+    "team": "Racing Bulls",
     "points": 40.0
   },
   {
     "driver": "Arvid Lindblad",
-    "team": "RB F1 Team",
+    "team": "Racing Bulls",
     "points": 22.0
   },
   {
     "driver": "Franco Colapinto",
-    "team": "Alpine F1 Team",
+    "team": "Alpine",
     "points": 19.0
   },
   {
@@ -85,7 +85,7 @@
     "points": 3.0
   },
   {
-    "driver": "Nico H\u00fclkenberg",
+    "driver": "Nico Hulkenberg",
     "team": "Audi",
     "points": 2.0
   },
@@ -95,8 +95,8 @@
     "points": 1.0
   },
   {
-    "driver": "Sergio P\u00e9rez",
-    "team": "Cadillac F1 Team",
+    "driver": "Sergio Perez",
+    "team": "Cadillac",
     "points": 0.0
   },
   {
@@ -106,7 +106,7 @@
   },
   {
     "driver": "Valtteri Bottas",
-    "team": "Cadillac F1 Team",
+    "team": "Cadillac",
     "points": 0.0
   }
 ]
