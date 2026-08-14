@@ -35,7 +35,7 @@ required_career_fields = {
     'Highest Race Finish',
     'Podiums',
     'Pole Positions',
-    'World Championships',
+    'Fastest Laps',
     'source',
 }
 if not required_career_fields.issubset(career_stats):

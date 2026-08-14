@@ -1,4 +1,5 @@
 import fastf1
+import glob
 import html
 import json
 import os
@@ -142,6 +143,7 @@ except Exception as error:
 # --- Deeper race analysis: lap times, tire strategy, fastest laps, telemetry ---
 ANALYSIS_DIR = f'{OUT_DIR}/analysis'
 os.makedirs(ANALYSIS_DIR, exist_ok=True)
+LECLERC_FASTEST_LAPS_BEFORE_2026 = 11
 
 for _, event in schedule.iterrows():
     rnd = int(event['RoundNumber'])
@@ -203,6 +205,25 @@ for _, event in schedule.iterrows():
         continue
 
 print("Analysis data pipeline complete.")
+
+try:
+    leclerc_fastest_laps_2026 = 0
+    for fastest_lap_file in glob.glob(f'{ANALYSIS_DIR}/fastest_laps_{YEAR}_r*.json'):
+        with open(fastest_lap_file) as file:
+            race_fastest_laps = json.load(file)
+        if race_fastest_laps and race_fastest_laps[0].get('driver') == 'LEC':
+            leclerc_fastest_laps_2026 += 1
+
+    with open(f'{OUT_DIR}/career_stats.json') as file:
+        career_stats = json.load(file)
+    career_stats['Fastest Laps'] = str(
+        LECLERC_FASTEST_LAPS_BEFORE_2026 + leclerc_fastest_laps_2026
+    )
+    with open(f'{OUT_DIR}/career_stats.json', 'w') as file:
+        json.dump(career_stats, file, indent=2)
+except Exception as error:
+    print(f'Could not update career fastest-lap total: {error}')
+
 # --- Fantasy model inputs ---
 MODEL_DIR = f'{OUT_DIR}/model'
 os.makedirs(MODEL_DIR, exist_ok=True)
