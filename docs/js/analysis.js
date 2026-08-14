@@ -2,9 +2,6 @@ const TIRE_COLORS = {
   SOFT: '#ff3333',
   MEDIUM: '#ffd21f',
   HARD: '#e8e8e8',
-  INTERMEDIATE: '#43b02a',
-  WET: '#0067ff',
-  UNKNOWN: '#777'
 };
 
 const TEAM_COLORS = {
