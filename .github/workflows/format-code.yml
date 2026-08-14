@@ -1,0 +1,25 @@
+name: Apply project formatting style
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  format:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npx --yes prettier@3 --single-quote --trailing-comma none --arrow-parens avoid --write docs/css/enhancements.css docs/fantasy.html docs/ferrari.html docs/js/analysis.js docs/js/app.js docs/js/garage.js docs/js/predictor.js docs/js/results.js docs/js/schedule.js docs/schedule.html
+      - name: Commit formatting changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet; then exit 0; fi
+          git add docs/css/enhancements.css docs/fantasy.html docs/ferrari.html docs/js/analysis.js docs/js/app.js docs/js/garage.js docs/js/predictor.js docs/js/results.js docs/js/schedule.js docs/schedule.html
+          git commit -m "Match project formatting style"
+          git push
