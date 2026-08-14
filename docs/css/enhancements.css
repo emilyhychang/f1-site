@@ -106,8 +106,8 @@
   color: #111;
   text-shadow: 0 1px rgba(255, 255, 255, 0.25);
 }
-.stint-segment[data-compound="HARD"] span,
-.stint-segment[data-compound="INTERMEDIATE"] span {
+.stint-segment[data-compound='HARD'] span,
+.stint-segment[data-compound='INTERMEDIATE'] span {
   color: #111;
 }
 .stint-scale {
@@ -230,7 +230,7 @@
   font-size: 1.1rem;
 }
 .timeline-item.next-round:after {
-  content: "NEXT RACE";
+  content: 'NEXT RACE';
   justify-self: end;
   font-size: 0.55rem;
   font-weight: 900;
