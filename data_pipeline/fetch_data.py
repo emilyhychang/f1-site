@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 fastf1.Cache.enable_cache('data_pipeline/cache')  # avoids re-downloading
 
 YEAR = 2026
-OUT_DIR = 'public/data'
+OUT_DIR = 'docs/data'
 os.makedirs(OUT_DIR, exist_ok=True)
 
 schedule = fastf1.get_event_schedule(YEAR, include_testing=False)
