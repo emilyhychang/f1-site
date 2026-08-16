@@ -177,20 +177,16 @@
             <h4>How the predictor works</h4>
             <ul>
               <li>
-                Each forecast blends recent results (45%), season form (20%),
+                Each estimate looks at recent results (45%), season form (20%),
                 constructor form (20%) and past results at the circuit (15%).
               </li>
               <li>
-                Reliability adjusts the ranking, and missing circuit history
-                falls back to the driver's recent form.
-              </li>
-              <li>
-                The model creates one unique predicted grid and finish for every
-                driver, then converts those outcomes into fantasy points.
+                It uses that information to estimate the starting and finishing order,
+                then converts those predictions into fantasy points.
               </li>
               <li>
                 Confidence reflects sample size, recent consistency and whether
-                circuit-specific history is available.
+                circuit specific history is available. 
               </li>
             </ul>
           </div>
