@@ -13,6 +13,7 @@ def load(relative_path):
 standings = load('standings_2026.json')
 drivers = load('model/driver_summary_2026.json')
 teams = load('model/team_summary_2026.json')
+prediction = load('model/race_prediction_2026.json')
 next_race = load('next_race.json')
 career_stats = load('career_stats.json')
 
@@ -24,6 +25,16 @@ if not isinstance(drivers, dict) or len(drivers) < 10:
 
 if not isinstance(teams, dict) or len(teams) < 5:
     raise ValueError('Fantasy team validation failed: fewer than 5 teams')
+
+predicted_drivers = prediction.get('drivers', [])
+predicted_finishes = [driver.get('predictedFinish') for driver in predicted_drivers]
+expected_finishes = list(range(1, len(predicted_drivers) + 1))
+if (
+    len(predicted_drivers) < 10
+    or sorted(predicted_finishes) != expected_finishes
+    or prediction.get('race', {}).get('round') != next_race.get('round')
+):
+    raise ValueError('Race prediction validation failed: missing drivers or duplicate finishes')
 
 required_next_race_fields = {'round', 'eventName', 'location', 'country', 'date'}
 if not required_next_race_fields.issubset(next_race):

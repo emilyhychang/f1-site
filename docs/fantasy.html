@@ -174,24 +174,26 @@
           </a>
 
           <div class="rules-box">
-            <h4>2026 scoring engine</h4>
+            <h4>How the predictor works</h4>
             <ul>
-              <li>5 drivers + 2 constructors under the selected budget.</li>
               <li>
-                The default $100M cap matches official F1 Fantasy; custom caps
-                are for private what-if scenarios.
+                Each forecast blends recent results (45%), season form (20%),
+                constructor form (20%) and past results at the circuit (15%).
               </li>
               <li>
-                Qualifying, race, sprint, position change, overtakes, fastest
-                lap and Driver Of The Day are included.
+                Reliability adjusts the ranking, and missing circuit history
+                falls back to the driver's recent form.
               </li>
               <li>
-                Constructors combine both drivers and include qualifying,
-                pit-stop and fastest-pit-stop components.
+                The model creates one unique predicted grid and finish for every
+                driver, then converts those outcomes into fantasy points.
+              </li>
+              <li>
+                Confidence reflects sample size, recent consistency and whether
+                circuit-specific history is available.
               </li>
             </ul>
           </div>
-          </p>
         </aside>
       </div>
     </main>
@@ -218,21 +220,17 @@
         })
       );
 
-      fetch('data/model/driver_summary_2026.json')
+      fetch('data/model/race_prediction_2026.json')
         .then(response => response.json())
-        .then(data => {
+        .then(prediction => {
           const select = document.getElementById('boost-driver');
 
-          Object.keys(data)
-            .sort(
-              (a, b) =>
-                (data[a].avgRecentPosition || 99) -
-                (data[b].avgRecentPosition || 99)
-            )
-            .forEach(code => {
+          prediction.drivers
+            .sort((a, b) => a.predictedFinish - b.predictedFinish)
+            .forEach(driver => {
               const option = document.createElement('option');
-              option.value = code;
-              option.textContent = `${code} · ${data[code].team}`;
+              option.value = driver.code;
+              option.textContent = `${driver.code} · ${driver.team}`;
               select.appendChild(option);
             });
         });

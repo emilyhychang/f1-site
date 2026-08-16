@@ -50,6 +50,9 @@ jobs:
       - name: Refresh race data
         run: python data_pipeline/fetch_data.py
 
+      - name: Build next-race prediction
+        run: python data_pipeline/build_predictions.py
+
       - name: Validate generated data
         run: python data_pipeline/validate_data.py
 

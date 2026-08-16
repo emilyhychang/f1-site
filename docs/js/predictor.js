@@ -115,9 +115,9 @@ let budgetCap =
 if (budgetInput) {
   budgetInput.value = budgetCap.toFixed(1).replace('.0', '');
   budgetInput.addEventListener('input', () => {
-    const next = clamp(Number(budgetInput.value) || 100, 50, 250);
+    const next = Number(budgetInput.value);
+    if (!Number.isFinite(next) || next < 50 || next > 250) return;
     budgetCap = next;
-    budgetInput.value = next;
     localStorage.setItem('scuderia16-budget', String(next));
     document.getElementById('budget-mode').textContent =
       next === 100
@@ -125,20 +125,21 @@ if (budgetInput) {
         : `Custom simulator cap: $${next.toFixed(1)}M`;
     updateSummary();
   });
+  budgetInput.addEventListener('change', () => {
+    budgetCap = clamp(Number(budgetInput.value) || 100, 50, 250);
+    budgetInput.value = budgetCap.toFixed(1).replace('.0', '');
+    localStorage.setItem('scuderia16-budget', String(budgetCap));
+    updateSummary();
+  });
 }
 
 function roundPosition(value) {
-  return clamp(Math.round(Number(value) || 20), 1, 20);
+  return clamp(Math.round(Number(value) || 22), 1, 22);
 }
 
 function projectDriver(code, data) {
-  const qualifyingGrid = roundPosition(data.avgRecentPosition);
-  const teamAdjustment = (Number(data.avgRecentPoints) || 0) / 8;
-  const finish = clamp(
-    Math.round(qualifyingGrid - teamAdjustment * 0.35),
-    1,
-    20
-  );
+  const qualifyingGrid = roundPosition(data.predictedGrid);
+  const finish = roundPosition(data.predictedFinish);
   const gained = Math.max(0, qualifyingGrid - finish);
   const lost = Math.min(0, qualifyingGrid - finish);
   const overtakes = Math.round(Math.max(0, 10 - finish) * 0.12);
@@ -168,7 +169,7 @@ function projectDriver(code, data) {
 
   return {
     code,
-    name: DRIVER_NAMES[code] || code,
+    name: data.name || DRIVER_NAMES[code] || code,
     team: data.team,
     price: DRIVER_PRICES[code],
     qualifying,
@@ -180,7 +181,9 @@ function projectDriver(code, data) {
     gained,
     overtakes,
     fastest: Math.round(fastest * 100),
-    dotd: Math.round(dotd * 100)
+    dotd: Math.round(dotd * 100),
+    confidence: Number(data.confidence) || 50,
+    features: data
   };
 }
 
@@ -235,14 +238,14 @@ function constructorScore(team, drivers) {
 
 Promise.all([
   fetch('data/next_race.json').then(response => response.json()),
-  fetch('data/model/driver_summary_2026.json').then(response => response.json())
+  fetch('data/model/race_prediction_2026.json').then(response => response.json())
 ])
-  .then(([race, drivers]) => {
+  .then(([race, prediction]) => {
     nextRace = race;
     driverModels = {};
 
-    Object.entries(drivers).forEach(([code, data]) => {
-      driverModels[code] = projectDriver(code, data);
+    prediction.drivers.forEach(data => {
+      driverModels[data.code] = projectDriver(data.code, data);
     });
 
     Object.keys(TEAM_PRICES).forEach(team => {
@@ -278,7 +281,7 @@ function renderDrivers() {
         <div class="name">
           <b>${driver.name}</b>
           <small style="color:${TEAM_COLORS[driver.team] || '#777'}">
-            ${driver.code} · ${driver.team} · P${driver.finish} projected
+            ${driver.code} · ${driver.team} · P${driver.finish} projected · ${driver.confidence}% confidence
           </small>
         </div>
         <div class="price">
