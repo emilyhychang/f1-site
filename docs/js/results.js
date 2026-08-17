@@ -41,6 +41,17 @@ fetch('data/schedule_2026.json')
     const requested = new URLSearchParams(location.search).get('round');
     if (requested && races.some(race => String(race.RoundNumber) === requested)) {
       picker.value = requested;
+    } else {
+      const latestCompleted = races
+        .filter(race => {
+          const scheduledStart = new Date(
+            race.Session5DateUtc || race.EventDate
+          ).getTime();
+          return Number.isFinite(scheduledStart) && scheduledStart + 6 * 60 * 60 * 1000 <= Date.now();
+        })
+        .at(-1);
+
+      picker.value = latestCompleted?.RoundNumber || races[0]?.RoundNumber || 1;
     }
 
     picker.addEventListener('change', () => {
@@ -48,7 +59,7 @@ fetch('data/schedule_2026.json')
       loadRound(picker.value);
     });
 
-    loadRound(picker.value || races[0]?.RoundNumber || 1);
+    loadRound(picker.value);
   })
   .catch(() => {});
 
