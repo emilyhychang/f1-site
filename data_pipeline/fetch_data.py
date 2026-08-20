@@ -88,6 +88,47 @@ if not upcoming.empty:
     with open(f'{OUT_DIR}/next_race.json', 'w') as f:
         json.dump(next_race_info, f, indent=2)
 
+    # Refresh in-weekend results independently of the race result. This file is
+    # deliberately rewritten for each upcoming round so data from the previous
+    # weekend can never leak into a new prediction.
+    weekend_context = {
+        'round': int(next_event['RoundNumber']),
+        'eventName': next_event['EventName'],
+        'sprint': None,
+        'qualifying': None,
+        'updatedAt': now.isoformat(),
+    }
+
+    def session_results_if_available(session_code, session_name):
+        matching_dates = []
+        for number in range(1, 6):
+            name = str(next_event.get(f'Session{number}', ''))
+            if name.lower() == session_name.lower():
+                matching_dates.append(next_event.get(f'Session{number}DateUtc'))
+
+        session_date = next((date for date in matching_dates if not pd.isna(date)), None)
+        if session_date is None or pd.to_datetime(session_date, utc=True) + timedelta(hours=2) > now:
+            return None
+
+        try:
+            session = fastf1.get_session(YEAR, int(next_event['RoundNumber']), session_code)
+            session.load(laps=False, telemetry=False, weather=False)
+            rows = session.results[['Abbreviation', 'Position']].dropna(subset=['Position'])
+            if len(rows) < 10:
+                return None
+            return [
+                {'code': row['Abbreviation'], 'position': int(row['Position'])}
+                for _, row in rows.iterrows()
+            ]
+        except Exception as error:
+            print(f'Could not fetch {session_name} results: {error}')
+            return None
+
+    weekend_context['sprint'] = session_results_if_available('S', 'Sprint')
+    weekend_context['qualifying'] = session_results_if_available('Q', 'Qualifying')
+    with open(f'{OUT_DIR}/weekend_context_{YEAR}.json', 'w') as f:
+        json.dump(weekend_context, f, indent=2)
+
     try:
         prev_session = fastf1.get_session(YEAR - 1, next_event['EventName'], 'R')
         prev_session.load(telemetry=True, weather=False)

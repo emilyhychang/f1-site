@@ -37,6 +37,16 @@ def completed(status):
 
 next_race = load(DATA_DIR / 'next_race.json')
 schedule = load(DATA_DIR / f'schedule_{YEAR}.json')
+weekend_path = DATA_DIR / f'weekend_context_{YEAR}.json'
+weekend = load(weekend_path) if weekend_path.exists() else {}
+if int(weekend.get('round', -1)) != int(next_race['round']):
+    weekend = {}
+sprint_positions = {
+    row['code']: float(row['position']) for row in (weekend.get('sprint') or [])
+}
+qualifying_positions = {
+    row['code']: float(row['position']) for row in (weekend.get('qualifying') or [])
+}
 completed_rounds = []
 
 for event in schedule:
@@ -95,12 +105,24 @@ for code, races in history.items():
 
     # Lower is better. Recent form carries most weight; the other features
     # stabilize small samples and add car, reliability, and circuit context.
-    performance = (
+    base_performance = (
         recent_position * 0.45
         + season_position * 0.20
         + constructor_position * 0.20
         + circuit_input * 0.15
         + (1 - completion_rate) * 4.0
+    )
+    sprint_position = sprint_positions.get(code)
+    performance_after_sprint = (
+        base_performance * 0.80 + sprint_position * 0.20
+        if sprint_position is not None
+        else base_performance
+    )
+    qualifying_position = qualifying_positions.get(code)
+    performance = (
+        performance_after_sprint * 0.55 + qualifying_position * 0.45
+        if qualifying_position is not None
+        else performance_after_sprint
     )
     qualifying = (
         recent_position * 0.55
@@ -109,7 +131,7 @@ for code, races in history.items():
     )
     confidence = max(
         35,
-        min(90, 55 + min(len(races), 10) * 2 + (8 if circuit_position else 0) - math.sqrt(recent_variance) * 2),
+        min(95, 55 + min(len(races), 10) * 2 + (8 if circuit_position else 0) + (5 if sprint_position else 0) + (10 if qualifying_position else 0) - math.sqrt(recent_variance) * 2),
     )
     ratings.append({
         'code': code,
@@ -119,6 +141,8 @@ for code, races in history.items():
         'seasonPosition': round(season_position, 2),
         'constructorPosition': round(constructor_position, 2),
         'circuitPosition': circuit_position,
+        'sprintPosition': sprint_position,
+        'qualifyingPosition': qualifying_position,
         'completionRate': round(completion_rate, 3),
         'performanceRating': round(performance, 3),
         'qualifyingRating': round(qualifying, 3),
@@ -126,7 +150,15 @@ for code, races in history.items():
     })
 
 finish_order = sorted(ratings, key=lambda item: (item['performanceRating'], item['code']))
-grid_order = sorted(ratings, key=lambda item: (item['qualifyingRating'], item['code']))
+grid_order = sorted(
+    ratings,
+    key=lambda item: (
+        item['qualifyingPosition']
+        if item['qualifyingPosition'] is not None
+        else item['qualifyingRating'],
+        item['code'],
+    ),
+)
 finish_positions = {item['code']: index + 1 for index, item in enumerate(finish_order)}
 grid_positions = {item['code']: index + 1 for index, item in enumerate(grid_order)}
 
@@ -145,8 +177,14 @@ output = {
             'sameCircuitHistory': 0.15,
         },
         'reliabilityPenaltyPositions': 4.0,
+        'sprintResultWeight': 0.20,
+        'qualifyingResultWeight': 0.45,
         'lookbackRaces': 5,
         'trainedThroughRound': max((round_number for round_number, _ in completed_rounds), default=0),
+    },
+    'sessions': {
+        'sprintIncluded': bool(sprint_positions),
+        'qualifyingIncluded': bool(qualifying_positions),
     },
     'drivers': sorted(ratings, key=lambda item: item['predictedFinish']),
 }

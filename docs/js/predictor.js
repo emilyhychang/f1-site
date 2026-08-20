@@ -252,8 +252,12 @@ Promise.all([
       constructorModels[team] = constructorScore(team, driverModels);
     });
 
+    const includedSessions = [
+      prediction.sessions?.sprintIncluded ? 'SPRINT INCLUDED' : '',
+      prediction.sessions?.qualifyingIncluded ? 'QUALIFYING INCLUDED' : ''
+    ].filter(Boolean);
     document.getElementById('race-context').textContent =
-      `${race.eventName} · ${SPRINT_ROUNDS.has(Number(race.round)) ? 'SPRINT WEEKEND · ' : ''}${race.location}`;
+      `${race.eventName} · ${SPRINT_ROUNDS.has(Number(race.round)) ? 'SPRINT WEEKEND · ' : ''}${race.location}${includedSessions.length ? ` · ${includedSessions.join(' · ')}` : ''}`;
 
     renderDrivers();
     renderConstructors();
