@@ -91,6 +91,95 @@
       "position": 22
     }
   ],
-  "qualifying": null,
-  "updatedAt": "2026-08-22T13:02:53.264907+00:00"
+  "qualifying": [
+    {
+      "code": "NOR",
+      "position": 1
+    },
+    {
+      "code": "RUS",
+      "position": 2
+    },
+    {
+      "code": "ANT",
+      "position": 3
+    },
+    {
+      "code": "PIA",
+      "position": 4
+    },
+    {
+      "code": "HAM",
+      "position": 5
+    },
+    {
+      "code": "LEC",
+      "position": 6
+    },
+    {
+      "code": "VER",
+      "position": 7
+    },
+    {
+      "code": "LAW",
+      "position": 8
+    },
+    {
+      "code": "BOR",
+      "position": 9
+    },
+    {
+      "code": "LIN",
+      "position": 10
+    },
+    {
+      "code": "GAS",
+      "position": 11
+    },
+    {
+      "code": "TSU",
+      "position": 12
+    },
+    {
+      "code": "HUL",
+      "position": 13
+    },
+    {
+      "code": "COL",
+      "position": 14
+    },
+    {
+      "code": "OCO",
+      "position": 15
+    },
+    {
+      "code": "ALB",
+      "position": 16
+    },
+    {
+      "code": "SAI",
+      "position": 17
+    },
+    {
+      "code": "ALO",
+      "position": 18
+    },
+    {
+      "code": "STR",
+      "position": 19
+    },
+    {
+      "code": "BEA",
+      "position": 20
+    },
+    {
+      "code": "BOT",
+      "position": 21
+    },
+    {
+      "code": "PER",
+      "position": 22
+    }
+  ],
+  "updatedAt": "2026-08-22T18:50:32.142019+00:00"
 }
