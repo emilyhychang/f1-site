@@ -2,6 +2,95 @@
   "round": 13,
   "eventName": "Italian Grand Prix",
   "sprint": null,
-  "qualifying": null,
-  "updatedAt": "2026-09-05T15:17:26.918787+00:00"
+  "qualifying": [
+    {
+      "code": "GAS",
+      "position": 1
+    },
+    {
+      "code": "RUS",
+      "position": 2
+    },
+    {
+      "code": "PIA",
+      "position": 3
+    },
+    {
+      "code": "LEC",
+      "position": 4
+    },
+    {
+      "code": "HAM",
+      "position": 5
+    },
+    {
+      "code": "VER",
+      "position": 6
+    },
+    {
+      "code": "ANT",
+      "position": 7
+    },
+    {
+      "code": "COL",
+      "position": 8
+    },
+    {
+      "code": "NOR",
+      "position": 9
+    },
+    {
+      "code": "LIN",
+      "position": 10
+    },
+    {
+      "code": "BOR",
+      "position": 11
+    },
+    {
+      "code": "BEA",
+      "position": 12
+    },
+    {
+      "code": "HUL",
+      "position": 13
+    },
+    {
+      "code": "LAW",
+      "position": 14
+    },
+    {
+      "code": "SAI",
+      "position": 15
+    },
+    {
+      "code": "OCO",
+      "position": 16
+    },
+    {
+      "code": "TSU",
+      "position": 17
+    },
+    {
+      "code": "ALB",
+      "position": 18
+    },
+    {
+      "code": "BOT",
+      "position": 19
+    },
+    {
+      "code": "PER",
+      "position": 20
+    },
+    {
+      "code": "ALO",
+      "position": 21
+    },
+    {
+      "code": "STR",
+      "position": 22
+    }
+  ],
+  "updatedAt": "2026-09-05T20:25:25.639159+00:00"
 }
