@@ -18,21 +18,12 @@
     "Status":"Finished"
   },
   {
-    "DriverNumber":"10",
-    "Abbreviation":"GAS",
-    "FullName":"Pierre Gasly",
-    "TeamName":"Alpine F1 Team",
-    "Position":3.0,
-    "Points":15.0,
-    "Status":"Finished"
-  },
-  {
     "DriverNumber":"6",
     "Abbreviation":"HAD",
     "FullName":"Isack Hadjar",
     "TeamName":"Red Bull",
-    "Position":4.0,
-    "Points":12.0,
+    "Position":3.0,
+    "Points":15.0,
     "Status":"Finished"
   },
   {
@@ -40,8 +31,8 @@
     "Abbreviation":"PIA",
     "FullName":"Oscar Piastri",
     "TeamName":"McLaren",
-    "Position":5.0,
-    "Points":10.0,
+    "Position":4.0,
+    "Points":12.0,
     "Status":"Finished"
   },
   {
@@ -49,8 +40,8 @@
     "Abbreviation":"LAW",
     "FullName":"Liam Lawson",
     "TeamName":"RB F1 Team",
-    "Position":6.0,
-    "Points":8.0,
+    "Position":5.0,
+    "Points":10.0,
     "Status":"Finished"
   },
   {
@@ -58,6 +49,15 @@
     "Abbreviation":"LIN",
     "FullName":"Arvid Lindblad",
     "TeamName":"RB F1 Team",
+    "Position":6.0,
+    "Points":8.0,
+    "Status":"Finished"
+  },
+  {
+    "DriverNumber":"10",
+    "Abbreviation":"GAS",
+    "FullName":"Pierre Gasly",
+    "TeamName":"Alpine F1 Team",
     "Position":7.0,
     "Points":6.0,
     "Status":"Finished"
