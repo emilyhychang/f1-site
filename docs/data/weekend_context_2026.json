@@ -2,6 +2,87 @@
   "round": 14,
   "eventName": "Spanish Grand Prix",
   "sprint": null,
-  "qualifying": null,
-  "updatedAt": "2026-09-12T15:34:48.938160+00:00"
+  "qualifying": [
+    {
+      "code": "NOR",
+      "position": 1
+    },
+    {
+      "code": "ANT",
+      "position": 2
+    },
+    {
+      "code": "VER",
+      "position": 3
+    },
+    {
+      "code": "HAM",
+      "position": 4
+    },
+    {
+      "code": "LEC",
+      "position": 5
+    },
+    {
+      "code": "RUS",
+      "position": 6
+    },
+    {
+      "code": "PIA",
+      "position": 7
+    },
+    {
+      "code": "LAW",
+      "position": 8
+    },
+    {
+      "code": "COL",
+      "position": 9
+    },
+    {
+      "code": "LIN",
+      "position": 10
+    },
+    {
+      "code": "HUL",
+      "position": 11
+    },
+    {
+      "code": "BOR",
+      "position": 12
+    },
+    {
+      "code": "OCO",
+      "position": 13
+    },
+    {
+      "code": "GAS",
+      "position": 14
+    },
+    {
+      "code": "TSU",
+      "position": 15
+    },
+    {
+      "code": "ALB",
+      "position": 16
+    },
+    {
+      "code": "SAI",
+      "position": 17
+    },
+    {
+      "code": "ALO",
+      "position": 18
+    },
+    {
+      "code": "PER",
+      "position": 19
+    },
+    {
+      "code": "BOT",
+      "position": 20
+    }
+  ],
+  "updatedAt": "2026-09-12T20:36:06.881382+00:00"
 }
