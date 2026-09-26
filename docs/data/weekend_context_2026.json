@@ -2,6 +2,95 @@
   "round": 15,
   "eventName": "Azerbaijan Grand Prix",
   "sprint": null,
-  "qualifying": null,
-  "updatedAt": "2026-09-25T11:55:45.882448+00:00"
+  "qualifying": [
+    {
+      "code": "RUS",
+      "position": 1
+    },
+    {
+      "code": "LEC",
+      "position": 2
+    },
+    {
+      "code": "PIA",
+      "position": 3
+    },
+    {
+      "code": "HAD",
+      "position": 4
+    },
+    {
+      "code": "NOR",
+      "position": 5
+    },
+    {
+      "code": "HAM",
+      "position": 6
+    },
+    {
+      "code": "GAS",
+      "position": 7
+    },
+    {
+      "code": "VER",
+      "position": 8
+    },
+    {
+      "code": "SAI",
+      "position": 9
+    },
+    {
+      "code": "COL",
+      "position": 10
+    },
+    {
+      "code": "BEA",
+      "position": 11
+    },
+    {
+      "code": "LAW",
+      "position": 12
+    },
+    {
+      "code": "ALB",
+      "position": 13
+    },
+    {
+      "code": "OCO",
+      "position": 14
+    },
+    {
+      "code": "LIN",
+      "position": 15
+    },
+    {
+      "code": "ANT",
+      "position": 16
+    },
+    {
+      "code": "BOR",
+      "position": 17
+    },
+    {
+      "code": "HUL",
+      "position": 18
+    },
+    {
+      "code": "ALO",
+      "position": 19
+    },
+    {
+      "code": "PER",
+      "position": 20
+    },
+    {
+      "code": "STR",
+      "position": 21
+    },
+    {
+      "code": "BOT",
+      "position": 22
+    }
+  ],
+  "updatedAt": "2026-09-26T05:03:37.388055+00:00"
 }
