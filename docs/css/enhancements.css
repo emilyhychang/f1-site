@@ -583,3 +583,12 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* Circuit names remain readable independently of the SVG aspect ratio. */
+.track-preview svg { height: clamp(220px, 29vw, 340px); }
+.circuit-caption { color: #aaa; text-align: center; font: 700 0.72rem ui-monospace, monospace; letter-spacing: 0.08em; }
+.circuit-guide { display: block; width: fit-content; margin: 12px auto 0; color: #aaa; font-size: 0.75rem; }
+.circuit-guide:hover { color: #fff; }
+.circuit-update-status { color: #999; font-size: 0.75rem; margin: 12px 0 24px; }
+.circuit-unavailable { min-height: 180px; display: grid; place-items: center; color: #aaa; }
+@media (prefers-reduced-motion: reduce) { .track-racer { display: none; } }

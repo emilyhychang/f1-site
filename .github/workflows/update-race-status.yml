@@ -1,0 +1,45 @@
+name: Refresh next race
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'data_pipeline/refresh_race_status.py'
+      - '.github/workflows/update-race-status.yml'
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: update-f1-race-data
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python data_pipeline/refresh_race_status.py
+      - name: Save snapshot
+        run: |
+          if ! git diff --quiet -- docs/data/race_status.json; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add docs/data/race_status.json
+            git commit -m 'Refresh next race and circuit'
+            git push
+          fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - uses: actions/deploy-pages@v4
+        id: deployment
