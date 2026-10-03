@@ -2,6 +2,95 @@
   "round": 16,
   "eventName": "Bahrain Grand Prix",
   "sprint": null,
-  "qualifying": null,
-  "updatedAt": "2026-10-03T11:43:24.626821+00:00"
+  "qualifying": [
+    {
+      "code": "VER",
+      "position": 1
+    },
+    {
+      "code": "HAM",
+      "position": 2
+    },
+    {
+      "code": "HAD",
+      "position": 3
+    },
+    {
+      "code": "ANT",
+      "position": 4
+    },
+    {
+      "code": "LEC",
+      "position": 5
+    },
+    {
+      "code": "NOR",
+      "position": 6
+    },
+    {
+      "code": "PIA",
+      "position": 7
+    },
+    {
+      "code": "RUS",
+      "position": 8
+    },
+    {
+      "code": "GAS",
+      "position": 9
+    },
+    {
+      "code": "BOR",
+      "position": 10
+    },
+    {
+      "code": "LAW",
+      "position": 11
+    },
+    {
+      "code": "ALO",
+      "position": 12
+    },
+    {
+      "code": "SAI",
+      "position": 13
+    },
+    {
+      "code": "STR",
+      "position": 14
+    },
+    {
+      "code": "COL",
+      "position": 15
+    },
+    {
+      "code": "LIN",
+      "position": 16
+    },
+    {
+      "code": "HUL",
+      "position": 17
+    },
+    {
+      "code": "BEA",
+      "position": 18
+    },
+    {
+      "code": "OCO",
+      "position": 19
+    },
+    {
+      "code": "ALB",
+      "position": 20
+    },
+    {
+      "code": "BOT",
+      "position": 21
+    },
+    {
+      "code": "PER",
+      "position": 22
+    }
+  ],
+  "updatedAt": "2026-10-03T16:20:40.295327+00:00"
 }
