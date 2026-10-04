@@ -1,8 +1,8 @@
 {
-  "round": 16,
-  "eventName": "Bahrain Grand Prix",
-  "location": "Kuala Lumpur",
-  "country": "Bahrain",
-  "date": "2026-10-04 00:00:00+00:00",
-  "raceStart": "2026-10-04 07:00:00"
+  "round": 17,
+  "eventName": "Singapore Grand Prix",
+  "location": "Marina Bay",
+  "country": "Singapore",
+  "date": "2026-10-11 00:00:00+00:00",
+  "raceStart": "2026-10-11 12:00:00"
 }

@@ -1,201 +1,201 @@
 {
   "RUS": {
     "team": "Mercedes",
-    "avgRecentPosition": 3.6,
-    "avgRecentPoints": 14.8,
-    "avgDryPosition": 5.8,
+    "avgRecentPosition": 6.2,
+    "avgRecentPoints": 13.6,
+    "avgDryPosition": 6.6875,
     "avgWetPosition": null,
     "wetRaceCount": 0,
-    "racesCount": 15
+    "racesCount": 16
   },
   "ANT": {
     "team": "Mercedes",
-    "avgRecentPosition": 2.4,
-    "avgRecentPoints": 18.6,
-    "avgDryPosition": 3.6,
+    "avgRecentPosition": 2.2,
+    "avgRecentPoints": 19.2,
+    "avgDryPosition": 3.5,
     "avgWetPosition": null,
     "wetRaceCount": 0,
-    "racesCount": 15
+    "racesCount": 16
   },
   "LEC": {
     "team": "Ferrari",
     "avgRecentPosition": 7.8,
     "avgRecentPoints": 9.2,
-    "avgDryPosition": 6.933333333333334,
+    "avgDryPosition": 6.75,
     "avgWetPosition": null,
     "wetRaceCount": 0,
-    "racesCount": 15
+    "racesCount": 16
   },
   "HAM": {
     "team": "Ferrari",
-    "avgRecentPosition": 8.6,
-    "avgRecentPoints": 7.6,
-    "avgDryPosition": 5.266666666666667,
+    "avgRecentPosition": 8.2,
+    "avgRecentPoints": 8.6,
+    "avgDryPosition": 5.125,
     "avgWetPosition": null,
     "wetRaceCount": 0,
-    "racesCount": 15
+    "racesCount": 16
   },
   "NOR": {
     "team": "McLaren",
-    "avgRecentPosition": 5.6,
-    "avgRecentPoints": 15.4,
-    "avgDryPosition": 7.866666666666666,
+    "avgRecentPosition": 7.2,
+    "avgRecentPoints": 10.8,
+    "avgDryPosition": 7.9375,
     "avgWetPosition": null,
     "wetRaceCount": 0,
-    "racesCount": 15
+    "racesCount": 16
   },
   "VER": {
     "team": "Red Bull",
-    "avgRecentPosition": 6.2,
-    "avgRecentPoints": 13.8,
-    "avgDryPosition": 8.0,
+    "avgRecentPosition": 6.0,
+    "avgRecentPoints": 15.2,
+    "avgDryPosition": 7.5625,
     "avgWetPosition": null,
     "wetRaceCount": 0,
-    "racesCount": 15
+    "racesCount": 16
   },
   "BEA": {
     "team": "Haas F1 Team",
-    "avgRecentPosition": 16.0,
+    "avgRecentPosition": 15.0,
     "avgRecentPoints": 0.4,
-    "avgDryPosition": 14.133333333333333,
+    "avgDryPosition": 14.125,
     "avgWetPosition": null,
     "wetRaceCount": 0,
-    "racesCount": 15
+    "racesCount": 16
   },
   "LIN": {
     "team": "RB F1 Team",
     "avgRecentPosition": 9.2,
     "avgRecentPoints": 2.6,
-    "avgDryPosition": 10.466666666666667,
+    "avgDryPosition": 10.4375,
     "avgWetPosition": null,
     "wetRaceCount": 0,
-    "racesCount": 15
+    "racesCount": 16
   },
   "BOR": {
     "team": "Audi",
-    "avgRecentPosition": 12.6,
+    "avgRecentPosition": 14.0,
     "avgRecentPoints": 0.0,
-    "avgDryPosition": 12.0,
+    "avgDryPosition": 12.375,
     "avgWetPosition": null,
     "wetRaceCount": 0,
-    "racesCount": 15
+    "racesCount": 16
   },
   "GAS": {
     "team": "Alpine F1 Team",
-    "avgRecentPosition": 11.8,
+    "avgRecentPosition": 12.6,
     "avgRecentPoints": 1.4,
-    "avgDryPosition": 10.6,
+    "avgDryPosition": 10.9375,
     "avgWetPosition": null,
     "wetRaceCount": 0,
-    "racesCount": 15
+    "racesCount": 16
   },
   "OCO": {
     "team": "Haas F1 Team",
-    "avgRecentPosition": 14.0,
+    "avgRecentPosition": 13.8,
     "avgRecentPoints": 0.8,
-    "avgDryPosition": 13.333333333333334,
+    "avgDryPosition": 13.4375,
     "avgWetPosition": null,
     "wetRaceCount": 0,
-    "racesCount": 15
+    "racesCount": 16
   },
   "ALB": {
     "team": "Williams",
-    "avgRecentPosition": 17.2,
+    "avgRecentPosition": 18.0,
     "avgRecentPoints": 0.0,
-    "avgDryPosition": 16.666666666666668,
+    "avgDryPosition": 16.9375,
     "avgWetPosition": null,
     "wetRaceCount": 0,
-    "racesCount": 15
+    "racesCount": 16
   },
   "LAW": {
     "team": "RB F1 Team",
-    "avgRecentPosition": 9.4,
-    "avgRecentPoints": 3.6,
-    "avgDryPosition": 9.533333333333333,
+    "avgRecentPosition": 9.2,
+    "avgRecentPoints": 4.0,
+    "avgDryPosition": 9.375,
     "avgWetPosition": null,
     "wetRaceCount": 0,
-    "racesCount": 15
+    "racesCount": 16
   },
   "COL": {
     "team": "Alpine F1 Team",
-    "avgRecentPosition": 12.4,
+    "avgRecentPosition": 12.0,
     "avgRecentPoints": 1.6,
-    "avgDryPosition": 11.533333333333333,
+    "avgDryPosition": 11.625,
     "avgWetPosition": null,
     "wetRaceCount": 0,
-    "racesCount": 15
+    "racesCount": 16
   },
   "SAI": {
     "team": "Williams",
-    "avgRecentPosition": 15.2,
+    "avgRecentPosition": 15.0,
     "avgRecentPoints": 0.2,
-    "avgDryPosition": 14.266666666666667,
+    "avgDryPosition": 14.4375,
     "avgWetPosition": null,
     "wetRaceCount": 0,
-    "racesCount": 15
+    "racesCount": 16
   },
   "PER": {
     "team": "Cadillac F1 Team",
-    "avgRecentPosition": 17.6,
+    "avgRecentPosition": 17.2,
     "avgRecentPoints": 0.0,
-    "avgDryPosition": 16.933333333333334,
+    "avgDryPosition": 17.0625,
     "avgWetPosition": null,
     "wetRaceCount": 0,
-    "racesCount": 15
+    "racesCount": 16
   },
   "STR": {
     "team": "Aston Martin",
-    "avgRecentPosition": 19.2,
+    "avgRecentPosition": 19.0,
     "avgRecentPoints": 0.0,
-    "avgDryPosition": 18.8,
+    "avgDryPosition": 18.375,
     "avgWetPosition": null,
     "wetRaceCount": 0,
-    "racesCount": 15
+    "racesCount": 16
   },
   "ALO": {
     "team": "Aston Martin",
-    "avgRecentPosition": 16.4,
-    "avgRecentPoints": 0.4,
-    "avgDryPosition": 16.933333333333334,
+    "avgRecentPosition": 15.2,
+    "avgRecentPoints": 1.2,
+    "avgDryPosition": 16.375,
     "avgWetPosition": null,
     "wetRaceCount": 0,
-    "racesCount": 15
+    "racesCount": 16
   },
   "BOT": {
     "team": "Cadillac F1 Team",
     "avgRecentPosition": 18.6,
     "avgRecentPoints": 0.0,
-    "avgDryPosition": 18.4,
+    "avgDryPosition": 18.625,
     "avgWetPosition": null,
     "wetRaceCount": 0,
-    "racesCount": 15
+    "racesCount": 16
   },
   "HAD": {
     "team": "Red Bull",
-    "avgRecentPosition": 5.2,
-    "avgRecentPoints": 9.8,
-    "avgDryPosition": 8.5,
+    "avgRecentPosition": 5.0,
+    "avgRecentPoints": 10.2,
+    "avgDryPosition": 8.23076923076923,
     "avgWetPosition": null,
     "wetRaceCount": 0,
-    "racesCount": 12
+    "racesCount": 13
   },
   "PIA": {
     "team": "McLaren",
-    "avgRecentPosition": 10.4,
-    "avgRecentPoints": 4.4,
-    "avgDryPosition": 9.133333333333333,
+    "avgRecentPosition": 7.6,
+    "avgRecentPoints": 6.0,
+    "avgDryPosition": 8.9375,
     "avgWetPosition": null,
     "wetRaceCount": 0,
-    "racesCount": 15
+    "racesCount": 16
   },
   "HUL": {
     "team": "Audi",
-    "avgRecentPosition": 10.0,
-    "avgRecentPoints": 1.4,
-    "avgDryPosition": 13.666666666666666,
+    "avgRecentPosition": 10.4,
+    "avgRecentPoints": 1.0,
+    "avgDryPosition": 13.5,
     "avgWetPosition": null,
     "wetRaceCount": 0,
-    "racesCount": 15
+    "racesCount": 16
   },
   "TSU": {
     "team": "RB F1 Team",

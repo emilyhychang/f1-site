@@ -2,7 +2,7 @@
   {
     "driver": "Andrea Kimi Antonelli",
     "team": "Mercedes",
-    "points": 276.0
+    "points": 294.0
   },
   {
     "driver": "George Russell",
@@ -12,37 +12,37 @@
   {
     "driver": "Lewis Hamilton",
     "team": "Ferrari",
-    "points": 179.0
-  },
-  {
-    "driver": "Lando Norris",
-    "team": "McLaren",
-    "points": 154.0
-  },
-  {
-    "driver": "Charles Leclerc",
-    "team": "Ferrari",
-    "points": 151.0
+    "points": 194.0
   },
   {
     "driver": "Max Verstappen",
     "team": "Red Bull",
-    "points": 151.0
+    "points": 176.0
+  },
+  {
+    "driver": "Charles Leclerc",
+    "team": "Ferrari",
+    "points": 163.0
+  },
+  {
+    "driver": "Lando Norris",
+    "team": "McLaren",
+    "points": 156.0
   },
   {
     "driver": "Oscar Piastri",
     "team": "McLaren",
-    "points": 99.0
+    "points": 107.0
   },
   {
     "driver": "Isack Hadjar",
     "team": "Red Bull",
-    "points": 86.0
+    "points": 96.0
   },
   {
     "driver": "Liam Lawson",
     "team": "RB F1 Team",
-    "points": 56.0
+    "points": 62.0
   },
   {
     "driver": "Pierre Gasly",
@@ -52,7 +52,7 @@
   {
     "driver": "Arvid Lindblad",
     "team": "RB F1 Team",
-    "points": 36.0
+    "points": 37.0
   },
   {
     "driver": "Franco Colapinto",
@@ -80,6 +80,11 @@
     "points": 7.0
   },
   {
+    "driver": "Fernando Alonso",
+    "team": "Aston Martin",
+    "points": 7.0
+  },
+  {
     "driver": "Nico H\u00fclkenberg",
     "team": "Audi",
     "points": 7.0
@@ -88,11 +93,6 @@
     "driver": "Alexander Albon",
     "team": "Williams",
     "points": 5.0
-  },
-  {
-    "driver": "Fernando Alonso",
-    "team": "Aston Martin",
-    "points": 3.0
   },
   {
     "driver": "Yuki Tsunoda",
