@@ -2,6 +2,95 @@
   "round": 18,
   "eventName": "United States Grand Prix",
   "sprint": null,
-  "qualifying": null,
-  "updatedAt": "2026-10-25T16:27:25.254136+00:00"
+  "qualifying": [
+    {
+      "code": "ANT",
+      "position": 1
+    },
+    {
+      "code": "VER",
+      "position": 2
+    },
+    {
+      "code": "HAD",
+      "position": 3
+    },
+    {
+      "code": "LEC",
+      "position": 4
+    },
+    {
+      "code": "HAM",
+      "position": 5
+    },
+    {
+      "code": "RUS",
+      "position": 6
+    },
+    {
+      "code": "PIA",
+      "position": 7
+    },
+    {
+      "code": "NOR",
+      "position": 8
+    },
+    {
+      "code": "LIN",
+      "position": 9
+    },
+    {
+      "code": "LAW",
+      "position": 10
+    },
+    {
+      "code": "GAS",
+      "position": 11
+    },
+    {
+      "code": "HUL",
+      "position": 12
+    },
+    {
+      "code": "BOR",
+      "position": 13
+    },
+    {
+      "code": "COL",
+      "position": 14
+    },
+    {
+      "code": "ALO",
+      "position": 15
+    },
+    {
+      "code": "BEA",
+      "position": 16
+    },
+    {
+      "code": "OCO",
+      "position": 17
+    },
+    {
+      "code": "STR",
+      "position": 18
+    },
+    {
+      "code": "SAI",
+      "position": 19
+    },
+    {
+      "code": "ALB",
+      "position": 20
+    },
+    {
+      "code": "PER",
+      "position": 21
+    },
+    {
+      "code": "BOT",
+      "position": 22
+    }
+  ],
+  "updatedAt": "2026-10-25T20:54:22.788987+00:00"
 }
