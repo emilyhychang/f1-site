@@ -2,6 +2,95 @@
   "round": 19,
   "eventName": "Mexico City Grand Prix",
   "sprint": null,
-  "qualifying": null,
-  "updatedAt": "2026-10-31T21:39:16.820126+00:00"
+  "qualifying": [
+    {
+      "code": "HAM",
+      "position": 1
+    },
+    {
+      "code": "RUS",
+      "position": 2
+    },
+    {
+      "code": "LEC",
+      "position": 3
+    },
+    {
+      "code": "VER",
+      "position": 4
+    },
+    {
+      "code": "ANT",
+      "position": 5
+    },
+    {
+      "code": "NOR",
+      "position": 6
+    },
+    {
+      "code": "HAD",
+      "position": 7
+    },
+    {
+      "code": "LIN",
+      "position": 8
+    },
+    {
+      "code": "LAW",
+      "position": 8
+    },
+    {
+      "code": "GAS",
+      "position": 9
+    },
+    {
+      "code": "HUL",
+      "position": 10
+    },
+    {
+      "code": "COL",
+      "position": 11
+    },
+    {
+      "code": "PIA",
+      "position": 12
+    },
+    {
+      "code": "BOR",
+      "position": 13
+    },
+    {
+      "code": "BEA",
+      "position": 14
+    },
+    {
+      "code": "SAI",
+      "position": 15
+    },
+    {
+      "code": "ALB",
+      "position": 16
+    },
+    {
+      "code": "ALO",
+      "position": 17
+    },
+    {
+      "code": "nan",
+      "position": 18
+    },
+    {
+      "code": "STR",
+      "position": 19
+    },
+    {
+      "code": "PER",
+      "position": 20
+    },
+    {
+      "code": "BOT",
+      "position": 21
+    }
+  ],
+  "updatedAt": "2026-11-01T06:12:39.463808+00:00"
 }
