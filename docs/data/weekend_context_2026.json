@@ -2,6 +2,95 @@
   "round": 20,
   "eventName": "S\u00e3o Paulo Grand Prix",
   "sprint": null,
-  "qualifying": null,
-  "updatedAt": "2026-11-07T21:54:56.350194+00:00"
+  "qualifying": [
+    {
+      "code": "NOR",
+      "position": 1
+    },
+    {
+      "code": "RUS",
+      "position": 2
+    },
+    {
+      "code": "ANT",
+      "position": 3
+    },
+    {
+      "code": "LEC",
+      "position": 4
+    },
+    {
+      "code": "LAW",
+      "position": 5
+    },
+    {
+      "code": "HUL",
+      "position": 6
+    },
+    {
+      "code": "HAD",
+      "position": 7
+    },
+    {
+      "code": "BEA",
+      "position": 8
+    },
+    {
+      "code": "ALO",
+      "position": 9
+    },
+    {
+      "code": "ALB",
+      "position": 10
+    },
+    {
+      "code": "HAM",
+      "position": 11
+    },
+    {
+      "code": "PIA",
+      "position": 12
+    },
+    {
+      "code": "nan",
+      "position": 13
+    },
+    {
+      "code": "LIN",
+      "position": 14
+    },
+    {
+      "code": "SAI",
+      "position": 15
+    },
+    {
+      "code": "VER",
+      "position": 16
+    },
+    {
+      "code": "COL",
+      "position": 17
+    },
+    {
+      "code": "GAS",
+      "position": 18
+    },
+    {
+      "code": "STR",
+      "position": 19
+    },
+    {
+      "code": "BOT",
+      "position": 20
+    },
+    {
+      "code": "PER",
+      "position": 21
+    },
+    {
+      "code": "BOR",
+      "position": 22
+    }
+  ],
+  "updatedAt": "2026-11-08T06:07:53.864103+00:00"
 }
