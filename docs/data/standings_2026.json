@@ -2,47 +2,47 @@
   {
     "driver": "Andrea Kimi Antonelli",
     "team": "Mercedes",
-    "points": 349.0
+    "points": 359.0
   },
   {
     "driver": "Max Verstappen",
     "team": "Red Bull",
-    "points": 241.0
+    "points": 259.0
   },
   {
     "driver": "Lewis Hamilton",
     "team": "Ferrari",
-    "points": 232.0
+    "points": 234.0
   },
   {
     "driver": "George Russell",
     "team": "Mercedes",
-    "points": 216.0
+    "points": 228.0
   },
   {
     "driver": "Charles Leclerc",
     "team": "Ferrari",
-    "points": 211.0
+    "points": 215.0
   },
   {
     "driver": "Lando Norris",
     "team": "McLaren",
-    "points": 188.0
+    "points": 213.0
   },
   {
     "driver": "Oscar Piastri",
     "team": "McLaren",
-    "points": 123.0
+    "points": 131.0
   },
   {
     "driver": "Isack Hadjar",
     "team": "Red Bull",
-    "points": 107.0
+    "points": 122.0
   },
   {
     "driver": "Liam Lawson",
     "team": "RB F1 Team",
-    "points": 76.0
+    "points": 82.0
   },
   {
     "driver": "Pierre Gasly",
@@ -72,7 +72,7 @@
   {
     "driver": "Nico H\u00fclkenberg",
     "team": "Audi",
-    "points": 11.0
+    "points": 12.0
   },
   {
     "driver": "Esteban Ocon",
@@ -117,6 +117,11 @@
   {
     "driver": "Valtteri Bottas",
     "team": "Cadillac F1 Team",
+    "points": 0.0
+  },
+  {
+    "driver": "Rafael Camara",
+    "team": "Haas F1 Team",
     "points": 0.0
   }
 ]
