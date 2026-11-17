@@ -2,32 +2,32 @@
   {
     "driver": "Andrea Kimi Antonelli",
     "team": "Mercedes",
-    "points": 344.0
+    "points": 359.0
   },
   {
     "driver": "Max Verstappen",
     "team": "Red Bull",
+    "points": 259.0
+  },
+  {
+    "driver": "Lewis Hamilton",
+    "team": "Ferrari",
     "points": 234.0
   },
   {
     "driver": "George Russell",
     "team": "Mercedes",
-    "points": 220.0
-  },
-  {
-    "driver": "Lewis Hamilton",
-    "team": "Ferrari",
-    "points": 216.0
+    "points": 228.0
   },
   {
     "driver": "Charles Leclerc",
     "team": "Ferrari",
-    "points": 203.0
+    "points": 215.0
   },
   {
     "driver": "Lando Norris",
     "team": "McLaren",
-    "points": 203.0
+    "points": 213.0
   },
   {
     "driver": "Oscar Piastri",
@@ -37,12 +37,12 @@
   {
     "driver": "Isack Hadjar",
     "team": "Red Bull",
-    "points": 120.0
+    "points": 122.0
   },
   {
     "driver": "Liam Lawson",
     "team": "RB F1 Team",
-    "points": 76.0
+    "points": 82.0
   },
   {
     "driver": "Pierre Gasly",
@@ -65,14 +65,14 @@
     "points": 19.0
   },
   {
+    "driver": "Gabriel Bortoleto",
+    "team": "Audi",
+    "points": 14.0
+  },
+  {
     "driver": "Nico H\u00fclkenberg",
     "team": "Audi",
     "points": 12.0
-  },
-  {
-    "driver": "Gabriel Bortoleto",
-    "team": "Audi",
-    "points": 10.0
   },
   {
     "driver": "Esteban Ocon",
@@ -97,6 +97,11 @@
   {
     "driver": "Yuki Tsunoda",
     "team": "RB F1 Team",
+    "points": 1.0
+  },
+  {
+    "driver": "Ryo Hirakawa",
+    "team": "Haas F1 Team",
     "points": 1.0
   },
   {

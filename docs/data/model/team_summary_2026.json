@@ -1,13 +1,13 @@
 {
-  "Mercedes": 12.1,
-  "Ferrari": 10.9,
-  "McLaren": 8.100000000000001,
-  "Red Bull": 15.0,
-  "Haas F1 Team": 0.4000000000000001,
+  "Mercedes": 10.9,
+  "Ferrari": 11.9,
+  "McLaren": 9.100000000000001,
+  "Red Bull": 14.4,
+  "Haas F1 Team": 0.45,
   "RB F1 Team": 1.9111111111111112,
-  "Audi": 0.5,
+  "Audi": 0.9,
   "Alpine F1 Team": 0.1,
-  "Williams": 0.1,
+  "Williams": 0.0,
   "Cadillac F1 Team": 0.0,
   "Aston Martin": 0.4
 }
