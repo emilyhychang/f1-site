@@ -2,6 +2,95 @@
   "round": 21,
   "eventName": "Las Vegas Grand Prix",
   "sprint": null,
-  "qualifying": null,
-  "updatedAt": "2026-11-21T07:15:09.122721+00:00"
+  "qualifying": [
+    {
+      "code": "ANT",
+      "position": 1
+    },
+    {
+      "code": "VER",
+      "position": 2
+    },
+    {
+      "code": "RUS",
+      "position": 3
+    },
+    {
+      "code": "NOR",
+      "position": 4
+    },
+    {
+      "code": "HAD",
+      "position": 5
+    },
+    {
+      "code": "LIN",
+      "position": 6
+    },
+    {
+      "code": "PIA",
+      "position": 7
+    },
+    {
+      "code": "LAW",
+      "position": 8
+    },
+    {
+      "code": "GAS",
+      "position": 9
+    },
+    {
+      "code": "COL",
+      "position": 10
+    },
+    {
+      "code": "LEC",
+      "position": 11
+    },
+    {
+      "code": "HAM",
+      "position": 12
+    },
+    {
+      "code": "HUL",
+      "position": 13
+    },
+    {
+      "code": "SAI",
+      "position": 14
+    },
+    {
+      "code": "BOR",
+      "position": 15
+    },
+    {
+      "code": "ALB",
+      "position": 16
+    },
+    {
+      "code": "CAM",
+      "position": 17
+    },
+    {
+      "code": "PER",
+      "position": 18
+    },
+    {
+      "code": "ALO",
+      "position": 19
+    },
+    {
+      "code": "STR",
+      "position": 20
+    },
+    {
+      "code": "BOT",
+      "position": 21
+    },
+    {
+      "code": "BEA",
+      "position": 22
+    }
+  ],
+  "updatedAt": "2026-11-21T19:20:43.189683+00:00"
 }
